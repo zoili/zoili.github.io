@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Zoin&#39;s Space</title>
+  
+  <subtitle>Welcome to Zoin&#39;s Space</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-11-29T09:10:47.568Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Zoin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>10 个 C++ 新特性</title>
+    <link href="http://example.com/2022/11/28/cppnewfeature/"/>
+    <id>http://example.com/2022/11/28/cppnewfeature/</id>
+    <published>2022-11-28T03:08:44.556Z</published>
+    <updated>2022-11-29T09:10:47.568Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;10-个-C-新特性&quot;&gt;&lt;a href=&quot;#10-个-C-新特性&quot; class=&quot;headerlink&quot; title=&quot;10 个 C++ 新特性&quot;&gt;&lt;/a&gt;10 个 C++ 新特性&lt;/h2&gt;&lt;p&gt;auto类型推导</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="c++" scheme="http://example.com/tags/c/"/>
+    
+    <category term="c" scheme="http://example.com/tags/c/"/>
+    
+  </entry>
+  
+</feed>
