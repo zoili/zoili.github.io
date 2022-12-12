@@ -6,7 +6,7 @@
   <link href="https://zoili.github.io/atom.xml" rel="self"/>
   
   <link href="https://zoili.github.io/"/>
-  <updated>2022-11-30T06:45:15.085Z</updated>
+  <updated>2022-12-09T10:08:08.845Z</updated>
   <id>https://zoili.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>githubrepo</title>
+    <link href="https://zoili.github.io/2022/12/09/githubrepo/"/>
+    <id>https://zoili.github.io/2022/12/09/githubrepo/</id>
+    <published>2022-12-09T09:23:47.000Z</published>
+    <updated>2022-12-09T10:08:08.845Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;github仓库的创建、克隆、拉取和推送&quot;&gt;&lt;a href=&quot;#github仓库的创建、克隆、拉取和推送&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="第三方技术" scheme="https://zoili.github.io/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="github" scheme="https://zoili.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows下mingw编译openssl</title>
+    <link href="https://zoili.github.io/2022/12/07/opensslcompile/"/>
+    <id>https://zoili.github.io/2022/12/07/opensslcompile/</id>
+    <published>2022-12-07T09:06:56.000Z</published>
+    <updated>2022-12-09T08:58:48.808Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;windows下用mingw编译openssl源码&quot;&gt;&lt;a href=&quot;#windows下用mingw编译openssl源码&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编译安装" scheme="https://zoili.github.io/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
+    
+    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>c++左值、右值、移动语义及完美转发</title>

@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>githubrepo</title>
+      <link href="/2022/12/09/githubrepo/"/>
+      <url>/2022/12/09/githubrepo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="github仓库的创建、克隆、拉取和推送"><a href="#github仓库的创建、克隆、拉取和推送" class="headerlink" title="github仓库的创建、克隆、拉取和推送"></a>github仓库的创建、克隆、拉取和推送</h2><p>本文主要讲解github仓库的创建、克隆到本地、拉取到本地、以及推送到github仓库</p><p>参考的文章：</p><p><a href="https://zhuanlan.zhihu.com/p/369486197">https://zhuanlan.zhihu.com/p/369486197</a><br><a href="https://blog.csdn.net/weixin_46622106/article/details/111914231">https://blog.csdn.net/weixin_46622106/article/details/111914231</a></p><h3 id="创建-GitHub-仓库的步骤及方法"><a href="#创建-GitHub-仓库的步骤及方法" class="headerlink" title="创建 GitHub 仓库的步骤及方法"></a>创建 GitHub 仓库的步骤及方法</h3><p><img src="/images/githubrepo1.webp"></p><p>如上图所示，此为博主的 GitHub 个人主页，点击Repositories，进入如下界面：</p><p>点击上图标注所示的绿色New按钮，进入下一步：</p><p><img src="/images/githubrepo2.webp"></p><p>标注 1：Repository name，仓库名称；</p><p>标注 2：Description，可选描述，也就是写不写都可以；</p><p>标注 3：Public，默认的仓库类型；</p><p>标注 4：Initialize this repository with a README，初始化仓库的信息文件，建议勾选。</p><p>如上图所示，这是创建 GitHub 仓库的核心页面，里面包含了众多信息。为了方便演示，博主已经把各种所需的信息都填写完啦！接下来，点击绿色Create repository按钮即可：</p><p><img src="/images/githubrepo3.webp"></p><p>如上图所示，我们已经把仓库创建成功啦！</p><p>仓库名为 CSBook ，包含 3 个commit，第一个 commit 是我们通过勾选Initialize this repository with a README，创建了一个初始化提交文件README.md，其中文件后缀为.md，表示文件为 Markdown 格式；包含 1 个branch，为master分支，即主分支；包含 1 个contributor，为贡献者，也就是我们自己</p><h3 id="GitHub-术语解释"><a href="#GitHub-术语解释" class="headerlink" title="GitHub 术语解释"></a>GitHub 术语解释</h3><p>Repository：简称Repo，可以理解为“仓库”，我们的项目就存放在仓库之中。也就是说，如果我们想要建立项目，就得先建立仓库；有多个项目，就建立多个仓库。</p><p>Issues：可以理解为“问题”，举一个简单的例子，如果我们开源一个项目，如果别人看了我们的项目，并且发现了bug，或者感觉那个地方有待改进，他就可以给我们提出Issue，等我们把Issues解决之后，就可以把这些Issues关闭；反之，我们也可以给他人提出Issue。</p><p>Star：可以理解为“点赞”，当我们感觉某一个项目做的比较好之后，就可以为这个项目点赞，而且我们点赞过的项目，都会保存到我们的Star之中，方便我们随时查看。在 GitHub 之中，如果一个项目的点星数能够超百，那么说明这个项目已经很不错了。</p><p>Fork：可以理解为“拉分支”，如果我们对某一个项目比较感兴趣，并且想在此基础之上开发新的功能，这时我们就可以Fork这个项目，这表示复制一个完成相同的项目到我们的 GitHub 账号之中，而且独立于原项目。之后，我们就可以在自己复制的项目中进行开发了。</p><p>Pull Request：可以理解为“提交请求”，此功能是建立在Fork之上的，如果我们Fork了一个项目，对其进行了修改，而且感觉修改的还不错，我们就可以对原项目的拥有者提出一个Pull请求，等其对我们的请求审核，并且通过审核之后，就可以把我们修改过的内容合并到原项目之中，这时我们就成了该项目的贡献者。</p><p>Merge：可以理解为“合并”，如果别人Fork了我们的项目，对其进行了修改，并且提出了Pull请求，这时我们就可以对这个Pull请求进行审核。如果这个Pull请求的内容满足我们的要求，并且跟我们原有的项目没有冲突的话，就可以将其合并到我们的项目之中。当然，是否进行合并，由我们决定。</p><p>Watch：可以理解为“观察”，如果我们Watch了一个项目，之后，如果这个项目有了任何更新，我们都会在第一时候收到该项目的更新通知。</p><p>Gist：如果我们没有项目可以开源或者只是单纯的想分享一些代码片段的话，我们就可以选择Gist。不过说心里话，如果不翻墙的话，Gist并不好用。</p><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>git工具的安装我已安装，安装后可以用git clone或git add origin … 或git fecth或git pull来拉取githbu上的仓库到本地，具体安装方法和git基本使用方法可参考本文开头给的参考地址</p><h3 id="利用-SSH-完成-Git-与-GitHub-的绑定"><a href="#利用-SSH-完成-Git-与-GitHub-的绑定" class="headerlink" title="利用 SSH 完成 Git 与 GitHub 的绑定"></a>利用 SSH 完成 Git 与 GitHub 的绑定</h3><p>现在，我们已经对 GitHub 有了一定的了解，包括创建仓库、拉分支，或者通过Clone or download克隆或者下载代码；我们也下载并安装了 Git，也了解了其常用的命令。</p><p>But，无论是 GitHub，还是 Git，我们都是单独或者说是独立操作的，并没有将两者绑定啊！也就是说，我们现在只能通过 GitHub 下载代码，并不能通过 Git 向 GitHub 提交代码。</p><p>因此，在本篇博文中，我们就一起完成 Git 和 GitHub 的绑定，体验通过 Git 向 GitHub 提交代码的能力。不过在这之前，我们需要先了解 SSh（安全外壳协议），因为在 GitHub 上，一般都是通过 SSH 来授权的，而且大多数 Git 服务器也会选择使用 SSH 公钥来进行授权，所以想要向 GitHub 提交代码，首先就得在 GitHub 上添加 SSH key配置。</p><p>第 1 步：生成 SSH key</p><p>我们要想生成SSH key，首先就得先安装 SSH，对于 Linux 和 Mac 系统，其默认是安装 SSH 的，而对于 Windows 系统，其默认是不安装 SSH 的，不过由于我们安装了 Git Bash，其也应该自带了 SSH. 可以通过在 Git Bash 中输入ssh命令，查看本机是否安装 SSH：</p><p><img src="/images/githubrepo4.webp"></p><p>如上图所示，此结果表示我们已经安装 SSH 啦！接下来，输入ssh-keygen -t rsa命令，表示我们指定 RSA 算法生成密钥，然后敲三次回车键，期间不需要输入密码，之后就就会生成两个文件，分别为id_rsa和id_rsa.pub，即密钥id_rsa和公钥id_rsa.pub. 对于这两个文件，其都为隐藏文件，默认生成在以下目录：</p><p>Linux 系统：~/.ssh</p><p>Mac 系统：~/.ssh</p><p>Windows 系统：C:\Documents and Settings\username\.ssh</p><p>Windows 10 ThinkPad：C:\Users\think.ssh</p><p>密钥和公钥生成之后，我们要做的事情就是把公钥id_rsa.pub的内容添加到 GitHub，这样我们本地的密钥id_rsa和 GitHub 上的公钥id_rsa.pub才可以进行匹配，授权成功后，就可以向 GitHub 提交代码啦！</p><p>第 2 步：添加 SSH key</p><p><img src="/images/githubrepo5.webp"></p><p>如上图所示，进入我们的 GitHub 主页，先点击右上角所示的倒三角▽图标，然后再点击Settins，进行设置页面；点击我们的头像亦可直接进入设置页面：</p><p><img src="/images/githubrepo6.webp"></p><p>如上图所示，进入Settings页面后，再点击SSH and GPG Keys进入此子界面，然后点击New SSH key按钮：</p><p><img src="/images/githubrepo7.webp"></p><p>如上图所示，我们只需要将公钥id_rsa.pub的内容粘贴到Key处的位置（Titles的内容不填写也没事），然后点击Add SSH key 即可。</p><p>第 3 步：验证绑定是否成功<br>在我们添加完SSH key之后，也没有明确的通知告诉我们绑定成功啊！不过我们可以通过在 Git Bash 中输入ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>进行测试：</p><p><img src="/images/githubrepo8.webp"></p><p>如上图所示，此结果即为Git 与 GitHub 绑定成功的标志</p><h3 id="通过-Git-将代码提交到-GitHub"><a href="#通过-Git-将代码提交到-GitHub" class="headerlink" title="通过 Git 将代码提交到 GitHub"></a>通过 Git 将代码提交到 GitHub</h3><p>当我们通过git clone或git add origin … 或git fecth或git pull来拉取githbu上的仓库到本地后，本地就和远程有了关联，我们可以通过命令 git push或git push origin master命令来推送本地代码到github仓库</p><p><img src="/images/githubrepo9.webp"></p><p>如上图所示，在第一次向远程仓库提交代码的时候，需要输入账号及密码进行验证，验证成功后，显示如下结果：</p><p><img src="/images/githubrepo10.webp"></p><p>然后，刷新 GitHub 中mybatis-tutorial仓库：</p><p><img src="/images/githubrepo20.webp"></p><p>如上图所示，我们已经将项目（仓库）中新添加的内容提交到了远程仓库。</p><p><strong>这里有个小问题</strong></p><p>在首次使用git push 推送上传文件到远程仓库时总是跳出，说密码过着账号输入错误</p><p><img src="/images/githubrepo11.webp"></p><p>首次推送提示 输入的的2次用户名密码，第一次是输入github的登陆用户名和密码；<br>第二次是输入下面截图操作步骤最终填写的usernuserame（用户名） 和生成的tokens（密码）</p><p>解决办法：<br>（首先登录GitHub网站登录你的git账号，做如下设置：</p><p>1.打开GitHub网站登录自己的gihub账号；<a href="https://github.com/">https://github.com</a></p><p>2.点击用户图小旁边的小三角，找到settings,打开它</p><p><img src="/images/githubrepo12.webp"></p><p>3.找到Developer settings,找到Personal access tokens,找到Generate new token</p><p><img src="/images/githubrepo13.webp"><br><img src="/images/githubrepo14.webp"><br><img src="/images/githubrepo15.webp"></p><p>4.填写第二次要输入的usernuserame，并勾选权限，生成token</p><p><img src="/images/githubrepo16.webp"></p><p>5.最终填写的usernuserame（用户名） 和生成的tokens（密码）就是第二次需要填写用户名和密码 。</p><p><img src="/images/githubrepo17.webp"></p><p>6.然后我们再次推送就成功了</p><p><img src="/images/githubrepo18.webp"></p><p><img src="/images/githubrepo19.webp"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 第三方技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows下mingw编译openssl</title>
+      <link href="/2022/12/07/opensslcompile/"/>
+      <url>/2022/12/07/opensslcompile/</url>
+      
+        <content type="html"><![CDATA[<h2 id="windows下用mingw编译openssl源码"><a href="#windows下用mingw编译openssl源码" class="headerlink" title="windows下用mingw编译openssl源码"></a>windows下用mingw编译openssl源码</h2><p>最近自己有写一个工具用第三方c++库请求一个https接口，由于直接请求http不让通过，所以只能请求https，但是请求https需要依赖openssl，第三方库我也是用mingw编译的，openssl我也打算用mingw编译，这样依赖上就没什么问题。</p><p>1.首先去openssl官网 <a href="https://www.openssl.org/">https://www.openssl.org/</a>，找到下载页面<a href="https://www.openssl.org/source/">https://www.openssl.org/source/</a>，拉到页面中部可以下载源代码，然后可以去往github托管的openssl，里面的说明要全面一些，<a href="https://github.com/openssl/openssl">https://github.com/openssl/openssl</a><br><img src="/images/opensslcompile1.jpg"><br><img src="/images/opensslcompile2.jpg"><br><img src="/images/opensslcompile3.jpg"></p><p>2.在github页面找到安装说明，然后找到window的安装说明，<a href="https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md#native-builds-using-mingw">https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md#native-builds-using-mingw</a><br>在这里面可以找到Native builds using MinGW，<br><img src="/images/opensslcompile4.jpg"></p><p>3.按照要求，并结合参考博客源写的文章<a href="https://blog.csdn.net/badayase/article/details/103921608">https://blog.csdn.net/badayase/article/details/103921608</a>，安装步骤如下：</p><ul><li>去往<a href="https://www.msys2.org/">https://www.msys2.org/</a>下载 <strong>mysys</strong></li><li>下载安装<strong>perl</strong>，目前mysys安装时已经自带perl,无需安装，如果你在mysys里面输入命令perl，找不到命令，那是需要安装的</li><li>由于我自己之前单独装了mingw，所以在mysys里面就不需要再安装make和gcc了，只需要让mysys能找到gcc和make即可，所以配置环境变量<strong>MSYS2_PATH_TYPE=inherit</strong>，msys2就会继承win系统的环境变量，去找寻win下已经配置好的mingw工具（需要重启shell窗口）。mysys命令行中输入gcc，没有提示找不到文件就说明成功了。</li><li>把下载好的源代码解压到mysys安装目录下的home目录下，比如我是解压在/home/openssl-1.1.1s下</li><li>进入mysys界面到/home/openssl-1.1.1s下执行<pre class="line-numbers language-none"><code class="language-none">.&#x2F;configure mingw64或.&#x2F;configure mingwmakemake install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><img src="/images/opensslcompile5.jpg"></li></ul><p>4.我编译中遇到两个问题，一个是要在mysys安装目录下创建tmp目录，一个是需要以管理员身份运行mysys，编译没问题，但是安装是默认是安装到c盘program file的openssl目录下，需要管理员权限</p><p>至此就安装完毕了，安装后的内容如下：<br><img src="/images/opensslcompile6.jpg"><br><img src="/images/opensslcompile7.jpg"><br><img src="/images/opensslcompile8.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编译安装 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> c </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>c++左值、右值、移动语义及完美转发</title>
       <link href="/2022/11/28/cppmove/"/>
       <url>/2022/11/28/cppmove/</url>
