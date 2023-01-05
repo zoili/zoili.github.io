@@ -6,7 +6,7 @@
   <link href="https://zoili.github.io/atom.xml" rel="self"/>
   
   <link href="https://zoili.github.io/"/>
-  <updated>2022-12-12T06:44:45.757Z</updated>
+  <updated>2023-01-05T02:32:46.457Z</updated>
   <id>https://zoili.github.io/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征</title>
+    <link href="https://zoili.github.io/2023/01/04/cmakedesc2/"/>
+    <id>https://zoili.github.io/2023/01/04/cmakedesc2/</id>
+    <published>2023-01-04T03:35:03.000Z</published>
+    <updated>2023-01-05T02:32:46.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征-compile-features&quot;&gt;&lt;a href=&quot;#cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征-compile-features&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编译安装" scheme="https://zoili.github.io/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
+    
+    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cmake基本使用（命令行）</title>
+    <link href="https://zoili.github.io/2022/12/16/cmakedesc/"/>
+    <id>https://zoili.github.io/2022/12/16/cmakedesc/</id>
+    <published>2022-12-16T03:35:03.000Z</published>
+    <updated>2023-01-04T07:56:00.669Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cmake基本使用（命令行）&quot;&gt;&lt;a href=&quot;#cmake基本使用（命令行）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编译安装" scheme="https://zoili.github.io/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
+    
+    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cmake基本使用（构建系统）</title>
+    <link href="https://zoili.github.io/2022/12/16/cmakedesc1/"/>
+    <id>https://zoili.github.io/2022/12/16/cmakedesc1/</id>
+    <published>2022-12-16T03:35:03.000Z</published>
+    <updated>2023-01-04T07:56:45.298Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cmake基本使用（构建系统）&quot;&gt;&lt;a href=&quot;#cmake基本使用（构建系统）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编译安装" scheme="https://zoili.github.io/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
+    
+    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>github仓库的创建、克隆、拉取和推送</title>
@@ -87,6 +168,33 @@
     
     
     <category term="编程" scheme="https://zoili.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
+    
+    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cmake生成器表达式</title>
+    <link href="https://zoili.github.io/2022/01/04/cmakedesc3/"/>
+    <id>https://zoili.github.io/2022/01/04/cmakedesc3/</id>
+    <published>2022-01-04T03:35:03.000Z</published>
+    <updated>2023-01-05T02:17:33.631Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cmake生成器表达式&quot;&gt;&lt;a href=&quot;#cmake生成器表达式&quot; class=&quot;headerlink&quot; title=&quot;cmake生成器表达式&quot;&gt;&lt;/a&gt;cmake生成器表达式&lt;/h1&gt;&lt;p&gt;参考：&lt;br&gt;官方文档和官方教程：&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="编译安装" scheme="https://zoili.github.io/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
     
     
     <category term="c++" scheme="https://zoili.github.io/tags/c/"/>

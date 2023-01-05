@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="windows下mingw编译openssl, Zoin&#39;s Space">
-    <meta name="description" content="windows下用mingw编译openssl源码最近自己有写一个工具用第三方c++库请求一个https接口，由于直接请求http不让通过，所以只能请求https，但是请求https需要依赖openssl，第三方库我也是用mingw编译的，">
+    <meta name="keywords" content="cmake基本使用（命令行）, Zoin&#39;s Space">
+    <meta name="description" content="cmake基本使用（命令行）参考：官方文档和官方教程：https://cmake.org/cmake/help/latest/index.htmlhttps://cmake.org/cmake/help/latest/guide/tutor">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>windows下mingw编译openssl | Zoin&#39;s Space</title>
+    <title>cmake基本使用（命令行） | Zoin&#39;s Space</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -335,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">windows下mingw编译openssl</h1>
+                    <h1 class="description center-align post-title">cmake基本使用（命令行）</h1>
                 </div>
             </div>
         </div>
@@ -393,28 +393,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-12-07
+                    2022-12-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-09
+                    2023-01-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    521
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    10 分
                 </div>
                 
 
@@ -437,22 +437,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="windows下用mingw编译openssl源码"><a href="#windows下用mingw编译openssl源码" class="headerlink" title="windows下用mingw编译openssl源码"></a>windows下用mingw编译openssl源码</h2><p>最近自己有写一个工具用第三方c++库请求一个https接口，由于直接请求http不让通过，所以只能请求https，但是请求https需要依赖openssl，第三方库我也是用mingw编译的，openssl我也打算用mingw编译，这样依赖上就没什么问题。</p>
-<p>1.首先去openssl官网 <a target="_blank" rel="noopener" href="https://www.openssl.org/">https://www.openssl.org/</a>，找到下载页面<a target="_blank" rel="noopener" href="https://www.openssl.org/source/">https://www.openssl.org/source/</a>，拉到页面中部可以下载源代码，然后可以去往github托管的openssl，里面的说明要全面一些，<a target="_blank" rel="noopener" href="https://github.com/openssl/openssl">https://github.com/openssl/openssl</a><br><img src="/images/opensslcompile1.jpg"><br><img src="/images/opensslcompile2.jpg"><br><img src="/images/opensslcompile3.jpg"></p>
-<p>2.在github页面找到安装说明，然后找到window的安装说明，<a target="_blank" rel="noopener" href="https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md#native-builds-using-mingw">https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md#native-builds-using-mingw</a><br>在这里面可以找到Native builds using MinGW，<br><img src="/images/opensslcompile4.jpg"></p>
-<p>3.按照要求，并结合参考博客源写的文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/badayase/article/details/103921608">https://blog.csdn.net/badayase/article/details/103921608</a>，安装步骤如下：</p>
-<ul>
-<li>去往<a target="_blank" rel="noopener" href="https://www.msys2.org/">https://www.msys2.org/</a>下载 <strong>mysys</strong></li>
-<li>下载安装<strong>perl</strong>，目前mysys安装时已经自带perl,无需安装，如果你在mysys里面输入命令perl，找不到命令，那是需要安装的</li>
-<li>由于我自己之前单独装了mingw，所以在mysys里面就不需要再安装make和gcc了，只需要让mysys能找到gcc和make即可，所以配置环境变量<strong>MSYS2_PATH_TYPE=inherit</strong>，msys2就会继承win系统的环境变量，去找寻win下已经配置好的mingw工具（需要重启shell窗口）。mysys命令行中输入gcc，没有提示找不到文件就说明成功了。</li>
-<li>把下载好的源代码解压到mysys安装目录下的home目录下，比如我是解压在/home/openssl-1.1.1s下</li>
-<li>进入mysys界面到/home/openssl-1.1.1s下执行<pre class="line-numbers language-none"><code class="language-none">.&#x2F;configure mingw64或.&#x2F;configure mingw
-make
-make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<img src="/images/opensslcompile5.jpg"></li>
-</ul>
-<p>4.我编译中遇到两个问题，一个是要在mysys安装目录下创建tmp目录，一个是需要以管理员身份运行mysys，编译没问题，但是安装是默认是安装到c盘program file的openssl目录下，需要管理员权限</p>
-<p>至此就安装完毕了，安装后的内容如下：<br><img src="/images/opensslcompile6.jpg"><br><img src="/images/opensslcompile7.jpg"><br><img src="/images/opensslcompile8.jpg"></p>
+                <h1 id="cmake基本使用（命令行）"><a href="#cmake基本使用（命令行）" class="headerlink" title="cmake基本使用（命令行）"></a>cmake基本使用（命令行）</h1><p>参考：<br>官方文档和官方教程：<br><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/index.html">https://cmake.org/cmake/help/latest/index.html</a><br><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></p>
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>1.先自己跟着教程走一遍，有个大概了解  </p>
+<p><img src="/images/cmakedesccomm1.jpg"></p>
+<p>2.命令行–这里只讲解cmake命令，ctest和cpack都比较简单，自己去官网上看看就好<br><img src="/images/cmakedesccomm2.jpg"></p>
+<p>3.其他，比如构建系统、cmake里面的命令、cmake内部属性变量、cmake生成器表达式、cmake语法等等<br>只讲如下标红框的内容</p>
+<p><img src="/images/cmakedesccomm3.jpg"></p>
+<h2 id="cmake命令行"><a href="#cmake命令行" class="headerlink" title="cmake命令行"></a>cmake命令行</h2><h3 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h3><h4 id="生成一个项目构建系统"><a href="#生成一个项目构建系统" class="headerlink" title="生成一个项目构建系统"></a>生成一个项目构建系统</h4><p><strong>cmake [&lt;options&gt;] &lt;path-to-source&gt;</strong> </p>
+<p>使用当前工作目录作为构建目录，使用path-to-source作为源代码目录。指定的路径可以是相对于当前工作目录的绝对路径或相对路径。源树必须包含一个CMakeLists.txt文件，不能包含一个CMakeCache.txt文件，因为后者标识了一个现有的构建目录  。</p>
+<pre class="line-numbers language-none"><code class="language-none">mkdir build ; cd build  
+cmake ..&#x2F;src<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>cmake [&lt;options&gt;] &lt;path-to-existing-build&gt;</strong></p>
+<p>使用ath-to-existing-build作为构建目录，并从它的CMakeCache.txt文件中加载到源代码目录的路径，该文件必须已经由以前的CMake运行生成。指定的路径可以是相对于当前工作目录的绝对路径或相对路径  </p>
+<pre class="line-numbers language-none"><code class="language-none">cd build  
+cmake .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>cmake [&lt;options&gt;] -S &lt;path-to-source&gt; -B &lt;path-to-build&gt;</strong></p>
+<p>使用 ath-to-build作为构建目录，使用 path-to-source作为源代码目录。指定的路径可以是相对于当前工作目录的绝对路径或相对路径。源树必须包含CMakeLists.txt文件。如果构建树不存在，将自动创建</p>
+<pre class="line-numbers language-none"><code class="language-none">cmake -S src -B build<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/images/cmakedesc1.jpg"></p>
+<p>在生成一个构建系统之后，可以使用相应的本地构建工具来构建项目。例如，在使用Unix Makefiles生成器后，可以直接运行make</p>
+<pre class="line-numbers language-none"><code class="language-none">make
+make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>Options</strong></p>
+<p>讲几个重要的，其他的可以看官网文档</p>
+<p><strong>-S &lt;path-to-source&gt;</strong><br>要构建的CMake项目的根目录的路径</p>
+<p><strong>-B &lt;path-to-build&gt;</strong><br>到CMake将用作构建目录根的目录的路径。<br>如果目录不存在，CMake将创建它。</p>
+<p><strong>-C &lt;initial-cache&gt;</strong><br>预加载脚本以填充缓存。</p>
+<p>当CMake第一次在一个空的构建树中运行时，它会创建一个CMakeCache.txt文件，并为项目填充可定制的设置。此选项可用于指定在第一次通过项目的CMake列表文件之前从其中加载缓存项的文件。加载的条目优先于项目的默认值。给定的文件应该是一个CMake脚本，其中包含使用CACHE选项的set()命令，而不是缓存格式的文件。</p>
+<p>脚本中对CMAKE_SOURCE_DIR和CMAKE_BINARY_DIR的引用计算为顶级源代码和构建目录</p>
+<p><strong>-D &lt;var&gt;:&lt;type&gt;=&lt;value&gt;, -D &lt;var&gt;=&lt;value&gt;</strong><br>创建或更新CMake CACHE条目。</p>
+<p>当CMake第一次在一个空的构建树中运行时，它会创建一个CMakeCache.txt文件，并为项目填充可定制的设置。此选项可用于指定优先于项目默认值的设置。可以根据需要对任意数量的缓存项重复该选项。</p>
+<p>如果给出了:type 部分，则它必须是set()命令文档为其CACHE签名指定的类型之一。如果:type 部分被省略，则如果条目不存在类型，则该条目将创建为没有类型的条目。如果项目中的命令将类型设置为PATH或FILEPATH，则 <value> 将被转换为绝对路径。</p>
+<p>该选项也可以作为单个参数给出:-D&lt;var&gt;:&lt;type&gt;=&lt;value&gt; or -D&lt;var&gt;=&lt;value&gt;.</p>
+<p>需要注意的是，-C和-D参数的顺序非常重要。它们将按照列出的顺序执行，最后一个参数优先于前面的参数。例如，如果你指定-DCMAKE_BUILD_TYPE=Debug，后面跟着一个-C参数，文件调用</p>
+<pre class="line-numbers language-none"><code class="language-none">set(CMAKE_BUILD_TYPE &quot;Release&quot; CACHE STRING &quot;&quot; FORCE)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>那么-C参数将优先，CMAKE_BUILD_TYPE将被设置为Release。但是，如果-D参数出现在-C参数之后，它将被设置为Debug。</p>
+<p>如果set(… CACHE …)调用在-C文件中不使用FORCE，并且-D参数设置了相同的变量，-D参数将优先考虑顺序</p>
+<p><strong>-U &lt;globbing_expr&gt;</strong><br>从CMake CACHE中删除匹配的条目。</p>
+<p>此选项可用于从CMakeCache.txt文件中删除一个或多个变量，使用*和?都受支持。可以根据需要对任意数量的缓存项重复该选项。</p>
+<p>小心使用，你可以让你的CMakeCache.txt无法工作</p>
+<p><strong>-G &lt;generator-name&gt;</strong></p>
+<p>指定生成系统生成器。</p>
+<p>CMake可能在某些平台上支持多个本地构建系统。生成器负责生成特定的构建系统。可能的生成器名称在cmake generators(7)<a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7)">https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7)</a>手册中指定。</p>
+<p>如果没有指定，CMake检查CMAKE_GENERATOR环境变量，否则退回到内置的默认选择</p>
+<blockquote>
+<p>大概有如下generator-name：<br>Borland Makefiles<br>MSYS Makefiles<br>MinGW Makefiles<br>NMake Makefiles<br>NMake Makefiles JOM<br>Unix Makefiles<br>Watcom WMake<br>Visual Studio 15 2017<br>Visual Studio 16 2019<br>Visual Studio 17 2022<br>…</p>
+</blockquote>
+<p><strong>-T &lt;toolset-spec&gt;</strong><br>生成器的工具集规范(如果支持的话)。</p>
+<p>一些CMake生成器支持工具集规范，以告诉本机构建系统如何选择编译器。详细信息请参阅CMAKE_GENERATOR_TOOLSET变量。</p>
+<p><strong>-L[A][H]</strong><br>列出非高级缓存变量。</p>
+<p>列表缓存变量将运行CMake，并从CMake缓存中列出所有未标记为INTERNAL或ADVANCED的变量。这将有效地显示当前的CMake设置，然后可以用-D选项进行更改。改变一些变量可能会导致创建更多的变量。如果指定了A，那么它也会显示高级变量。如果指定了H，它还将显示每个变量的帮助</p>
+<p><strong>–log-level=&lt;level&gt;</strong><br>设置日志 &lt;级别&gt; 。<br>message()命令将只输出指定日志级别或更高级别的消息。有效的日志级别为ERROR、WARNING、NOTICE、STATUS(默认)、VERBOSE、DEBUG和TRACE。</p>
+<p>要使CMake运行之间的日志级别保持不变，请将CMAKE_MESSAGE_LOG_LEVEL设置为缓存变量。如果同时给出了命令行选项和变量，则命令行选项优先。</p>
+<p>出于向后兼容性的考虑，——loglevel也可以作为该选项的同义词。</p>
+<p><strong>–log-context</strong><br>启用message()命令输出附加到每个消息的上下文。</p>
+<p>此选项只显示当前CMake运行的上下文。要使在所有后续CMake运行中显示上下文持久，请将CMAKE_MESSAGE_CONTEXT_SHOW设置为缓存变量。当给出这个命令行选项时，CMAKE_MESSAGE_CONTEXT_SHOW将被忽略。</p>
+<p><strong>–debug-find</strong><br>将cmake find命令置于调试模式。</p>
+<p>在cmake运行过程中打印额外的find调用信息到标准错误。输出是为人类使用而设计的，而不是用于解析。另请参阅CMAKE_FIND_DEBUG_MODE变量，以调试项目更本地的部分</p>
+<p><strong>–debug-find-pkg=&lt;pkg&gt;[,…]</strong><br>在调用find_package( )时，将cmake find命令置于调试模式，其中 是给定的以逗号分隔的区分大小写的包名列表中的一个条目。</p>
+<p>类似于——debug-find，但将作用域限制为指定的包</p>
+<p><strong>–debug-find-var=&lt;var&gt;[,…]</strong><br>当使用作为结果变量调用时，将cmake find命令置于调试模式，其中是给定逗号分隔列表中的一个条目。</p>
+<p>类似于——debug-find，但将作用域限制为指定的变量名。</p>
+<p><strong>–preset &lt;preset&gt;, –preset=&lt;preset&gt;</strong><br>从 /CMakePresets中读取预设值。和 /CMakeUserPresets.json。预设可以指定生成器和构建目录，以及传递给CMake的变量和其他参数列表。当前工作目录必须包含CMake预设文件。CMake GUI也可以识别CMakePresets。json和CMakeUserPresets。json文件。有关这些文件的详细信息，请参见cmake-presets(7)。</p>
+<p>在所有其他命令行选项之前读取预设。预置所指定的选项(变量、生成器等)都可以通过在命令行上手动指定来覆盖。例如，如果预设将一个名为MYVAR的变量设置为1，但用户使用-D参数将其设置为2，则首选值为2。</p>
+<p><strong>–list-presets[=&lt;type&gt;]</strong><br>列出指定type的可用预设。 type的有效值为configure、build、test、package或all。如果省略 ，则假设为configure。当前工作目录必须包含CMake预设文件。</p>
+<h4 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h4><p><strong>cmake –build &lt;dir&gt;             [&lt;options&gt;] [– &lt;build-tool-options&gt;]<br>cmake –build –preset &lt;preset&gt; [&lt;options&gt;] [– &lt;build-tool-options&gt;]</strong>  </p>
+<p><strong>–build &lt;dir&gt;</strong><br>要构建的项目二进制目录。这是必需的(除非指定了预设)，并且必须是第一个</p>
+<p><strong>–preset &lt;preset&gt;, –preset=&lt;preset&gt;</strong><br>使用生成预设来指定生成选项。项目二进制目录是从configurePreset键推断出来的。当前工作目录必须包含CMake预设文件。详细信息请参见预置。</p>
+<p><strong>–list-presets</strong><br>列出可用的生成预设。当前工作目录必须包含CMake预设文件</p>
+<p><strong>-j [&lt;jobs&gt;], –parallel [&lt;jobs&gt;]</strong><br>构建时使用的最大并发进程数。如果省略 ，则使用本机构建工具的默认编号。</p>
+<p>如果设置了CMAKE_BUILD_PARALLEL_LEVEL环境变量，则在没有给出此选项时指定默认并行级别。</p>
+<p>一些本地构建工具总是并行构建。 值为1的使用可用于限制单个作业。</p>
+<p><strong>-t &lt;tgt&gt;…, –target &lt;tgt&gt;…</strong><br>Build 而不是默认目标。可以给出多个目标，用空格分隔</p>
+<p><strong>–config &lt;cfg&gt;</strong><br>对于多配置工具，请选择configuration</p>
+<p><strong>–clean-first</strong><br>首先构建目标清洁，然后构建 (To clean only, use –target clean.)</p>
+<p><strong>-v, –verbose</strong><br>启用详细输出(如果支持)，包括要执行的构建命令。</p>
+<p>如果设置了VERBOSE环境变量或CMAKE_VERBOSE_MAKEFILE缓存变量，则可以省略此选项</p>
+<p><strong>–</strong><br>将剩余选项传递给本地编译工具</p>
+<h4 id="安装项目"><a href="#安装项目" class="headerlink" title="安装项目"></a>安装项目</h4><p><strong>cmake –install &lt;dir&gt; [&lt;options&gt;]</strong>  </p>
+<p><strong>–install &lt;dir&gt;</strong><br>要安装的项目二进制目录。这是必需的，必须放在第一位</p>
+<p><strong>–config &lt;cfg&gt;</strong><br>对于多配置生成器，选择configuration </p>
+<p><strong>–component &lt;comp&gt;</strong><br>基于组件的安装。只安装组件 </p>
+<p><strong>–default-directory-permissions &lt;permissions&gt;</strong><br>默认目录安装权限。权限格式 &lt;u=rwx,g=rx,o=rx&gt;</p>
+<p><strong>–prefix &lt;prefix&gt;</strong><br>重写安装前缀CMAKE_INSTALL_PREFIX</p>
+<p><strong>–strip</strong><br>安装前先剥离</p>
+<p><strong>-v, –verbose</strong><br>启用详细输出。</p>
+<p>如果设置了VERBOSE环境变量，则可以省略此选项</p>
+<p><strong>Run cmake –install with no options for quick help.</strong></p>
+<h4 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h4><p><strong>cmake [-D &lt;var&gt;=&lt;value&gt;]… -P &lt;cmake-script-file&gt; [– &lt;unparsed-options&gt;…]</strong>  </p>
+<p><strong>-D &lt;var&gt;=&lt;value&gt;</strong><br>定义脚本模式的变量。</p>
+<p><strong>-P &lt;cmake-script-file&gt;</strong><br>将给定的cmake文件作为用cmake语言编写的脚本处理。不执行配置或生成步骤，也不修改缓存。如果使用-D定义变量，则必须在-P参数之前执行此操作</p>
 
                 
             </div>
@@ -479,7 +558,7 @@ make install<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zoili.github.io/2022/12/07/opensslcompile/">https://zoili.github.io/2022/12/07/opensslcompile/</a>
+                    <a href="https://zoili.github.io/2022/12/16/cmakedesc/">https://zoili.github.io/2022/12/16/cmakedesc/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -605,13 +684,13 @@ make install<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/12/09/githubrepo/">
+                <a href="/2023/01/04/cmakedesc2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="github仓库的创建、克隆、拉取和推送">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征">
                         
-                        <span class="card-title">github仓库的创建、克隆、拉取和推送</span>
+                        <span class="card-title">cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -622,14 +701,14 @@ make install<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-04
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    第三方技术
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="post-category">
+                                    编译安装
                                 </a>
                             
                             
@@ -639,8 +718,12 @@ make install<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c</span>
                     </a>
                     
                 </div>
@@ -654,13 +737,13 @@ make install<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/11/28/cppmove/">
+                <a href="/2022/12/16/cmakedesc1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="c++左值、右值、移动语义及完美转发">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="cmake基本使用（构建系统）">
                         
-                        <span class="card-title">c++左值、右值、移动语义及完美转发</span>
+                        <span class="card-title">cmake基本使用（构建系统）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -671,14 +754,14 @@ make install<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="post-category">
+                                    编译安装
                                 </a>
                             
                             
