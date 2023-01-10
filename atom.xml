@@ -6,7 +6,7 @@
   <link href="https://zoili.github.io/atom.xml" rel="self"/>
   
   <link href="https://zoili.github.io/"/>
-  <updated>2023-01-05T02:32:46.457Z</updated>
+  <updated>2023-01-10T02:27:33.742Z</updated>
   <id>https://zoili.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PowerDesigner安装+破解+汉化</title>
+    <link href="https://zoili.github.io/2023/01/06/powerdesign/"/>
+    <id>https://zoili.github.io/2023/01/06/powerdesign/</id>
+    <published>2023-01-06T03:35:03.000Z</published>
+    <updated>2023-01-10T02:27:33.742Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;PowerDesigner安装-破解-汉化&quot;&gt;&lt;a href=&quot;#PowerDesigner安装-破解-汉化&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="软件安装" scheme="https://zoili.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征</title>
@@ -29,6 +52,33 @@
         
         
     <summary type="html">&lt;h1 id=&quot;cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征-compile-features&quot;&gt;&lt;a href=&quot;#cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征-compile-features&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编译安装" scheme="https://zoili.github.io/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
+    
+    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cmake生成器表达式</title>
+    <link href="https://zoili.github.io/2023/01/04/cmakedesc3/"/>
+    <id>https://zoili.github.io/2023/01/04/cmakedesc3/</id>
+    <published>2023-01-04T03:35:03.000Z</published>
+    <updated>2023-01-05T09:54:59.975Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cmake生成器表达式&quot;&gt;&lt;a href=&quot;#cmake生成器表达式&quot; class=&quot;headerlink&quot; title=&quot;cmake生成器表达式&quot;&gt;&lt;/a&gt;cmake生成器表达式&lt;/h1&gt;&lt;p&gt;参考：&lt;br&gt;官方文档和官方教程：&lt;br&gt;&lt;a</summary>
         
       
     
@@ -168,33 +218,6 @@
     
     
     <category term="编程" scheme="https://zoili.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
-    
-    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cmake生成器表达式</title>
-    <link href="https://zoili.github.io/2022/01/04/cmakedesc3/"/>
-    <id>https://zoili.github.io/2022/01/04/cmakedesc3/</id>
-    <published>2022-01-04T03:35:03.000Z</published>
-    <updated>2023-01-05T02:17:33.631Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;cmake生成器表达式&quot;&gt;&lt;a href=&quot;#cmake生成器表达式&quot; class=&quot;headerlink&quot; title=&quot;cmake生成器表达式&quot;&gt;&lt;/a&gt;cmake生成器表达式&lt;/h1&gt;&lt;p&gt;参考：&lt;br&gt;官方文档和官方教程：&lt;br&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="编译安装" scheme="https://zoili.github.io/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
     
     
     <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
