@@ -6,7 +6,7 @@
   <link href="https://zoili.github.io/atom.xml" rel="self"/>
   
   <link href="https://zoili.github.io/"/>
-  <updated>2023-01-10T03:20:14.012Z</updated>
+  <updated>2023-01-17T09:49:49.419Z</updated>
   <id>https://zoili.github.io/</id>
   
   <author>
@@ -15,6 +15,502 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexouse</title>
+    <link href="https://zoili.github.io/2023/01/16/hexouse/"/>
+    <id>https://zoili.github.io/2023/01/16/hexouse/</id>
+    <published>2023-01-16T09:15:16.000Z</published>
+    <updated>2023-01-17T09:49:49.419Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;hexo的使用和原理&quot;&gt;&lt;a href=&quot;#hexo的使用和原理&quot; class=&quot;headerlink&quot; title=&quot;hexo的使用和原理&quot;&gt;&lt;/a&gt;hexo的使用和原理&lt;/h1&gt;&lt;p&gt;本博客使用hexo搭建，hexo是一个静态网站生成工具，只需要关注md等格式的文章编写和选择成熟的hexo主题，运用hexo工具基本上能生成一个相对可以的静态博客系统，这个博客系统可以部署到github上免费提供的静态网站服务gitpage。&lt;br&gt;现在我了解了hexo，像还有vuepress也是静态网站工具，还有wordpress也是网站工具，不过wordpress是带php后台的，后面打算了解一下wordpress和用wordpress搭一个平台，到最后结合hexo主题以及wordpress一些内容，自己使用vue和java或cpp后台搭建一个网站。&lt;br&gt;言归正传，hexo的参考网站如下：&lt;br&gt;官网：&lt;a href=&quot;https://hexo.io/zh-cn/index.html&quot;&gt;https://hexo.io/zh-cn/index.html&lt;/a&gt;&lt;br&gt;原理：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/348093645&quot;&gt;https://zhuanlan.zhihu.com/p/348093645&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.jianshu.com/p/a938da5ddb5d&quot;&gt;https://www.jianshu.com/p/a938da5ddb5d&lt;/a&gt;&lt;br&gt;搭建过程：&lt;a href=&quot;https://blog.csdn.net/sinat_37781304/article/details/82729029&quot;&gt;https://blog.csdn.net/sinat_37781304/article/details/82729029&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_45019350/article/details/121901433&quot;&gt;https://blog.csdn.net/weixin_45019350/article/details/121901433&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.cnblogs.com/thanksblog/p/12900165.html&quot;&gt;https://www.cnblogs.com/thanksblog/p/12900165.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;hexo安装和使用&quot;&gt;&lt;a href=&quot;#hexo安装和使用&quot; class=&quot;headerlink&quot; title=&quot;hexo安装和使用&quot;&gt;&lt;/a&gt;hexo安装和使用&lt;/h2&gt;&lt;h3 id=&quot;预先安装的软件&quot;&gt;&lt;a href=&quot;#预先安装的软件&quot; class=&quot;headerlink&quot; title=&quot;预先安装的软件&quot;&gt;&lt;/a&gt;预先安装的软件&lt;/h3&gt;&lt;p&gt;1.Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)&lt;br&gt;2.Git&lt;/p&gt;
+&lt;h3 id=&quot;安装-Hexo&quot;&gt;&lt;a href=&quot;#安装-Hexo&quot; class=&quot;headerlink&quot; title=&quot;安装 Hexo&quot;&gt;&lt;/a&gt;安装 Hexo&lt;/h3&gt;&lt;p&gt;所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。&lt;br&gt;全局安装，安装后不需要配置环境变量，即可找到hexo命令&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;npm install -g hexo-cli&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;局部安装，安装后需要配置环境变量，可找到hexo命令&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;npm install hexo&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将 Hexo 所在的目录下的 node_modules 添加到环境变量之中即可直接使用 hexo命令&lt;/p&gt;
+&lt;h3 id=&quot;建站&quot;&gt;&lt;a href=&quot;#建站&quot; class=&quot;headerlink&quot; title=&quot;建站&quot;&gt;&lt;/a&gt;建站&lt;/h3&gt;&lt;p&gt;安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;hexo init &amp;lt;folder&amp;gt;
+cd &amp;lt;folder&amp;gt;
+npm install&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;新建完成后，指定文件夹的目录如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;_config.yml:&lt;br&gt;网站的 配置 信息，您可以在此配置大部分的参数。&lt;br&gt;package.json:&lt;br&gt;应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。&lt;br&gt;scaffolds:&lt;br&gt;模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。&lt;br&gt;Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。&lt;br&gt;source:&lt;br&gt;资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。&lt;br&gt;themes:&lt;br&gt;主题 文件夹。Hexo 会根据主题来生成静态页面。&lt;/p&gt;
+&lt;h3 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h3&gt;&lt;p&gt;可以在 _config.yml 中修改大部分的配置&lt;br&gt;&lt;strong&gt;网站&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述&lt;br&gt;title    网站标题&lt;br&gt;subtitle    网站副标题&lt;br&gt;description    网站描述&lt;br&gt;keywords    网站的关键词。支持多个关键词。&lt;br&gt;author    您的名字&lt;br&gt;language    网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 zh-Hans和 zh-CN。&lt;br&gt;timezone    网站时区。Hexo 默认使用您电脑的时区。请参考 时区列表 进行设置，如 America/New_York, Japan, 和 UTC 。一般的，对于中国大陆地区可以使用 Asia/Shanghai。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其中，description主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。author参数用于主题显示文章的作者。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述    默认值&lt;br&gt;url    网址, 必须以 http:// 或 https:// 开头&lt;br&gt;root    网站根目录    url’s pathname&lt;br&gt;permalink    文章的 永久链接 格式    :year/:month/:day/:title/&lt;br&gt;permalink_defaults    永久链接中各部分的默认值&lt;br&gt;pretty_urls    改写 permalink 的值来美化 URL&lt;br&gt;pretty_urls.trailing_index    是否在永久链接中保留尾部的 index.html，设置为 false 时去除    true&lt;br&gt;pretty_urls.trailing_html    是否在永久链接中保留尾部的 .html, 设置为 false 时去除 (对尾部的 index.html无效)    true  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;网站存放在子目录&lt;br&gt;如果您的网站存放在子目录中，例如 &lt;a href=&quot;http://example.com/blog%EF%BC%8C%E5%88%99%E8%AF%B7%E5%B0%86%E6%82%A8%E7%9A%84&quot;&gt;http://example.com/blog，则请将您的&lt;/a&gt; url 设为 &lt;a href=&quot;http://example.com/blog&quot;&gt;http://example.com/blog&lt;/a&gt; 并把 root 设为 /blog/。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;#比如，一个页面的永久链接是 http:&amp;#x2F;&amp;#x2F;example.com&amp;#x2F;foo&amp;#x2F;bar&amp;#x2F;index.html  
+pretty_urls:  
+  trailing_index: false  
+#此时页面的永久链接会变为 http:&amp;#x2F;&amp;#x2F;example.com&amp;#x2F;foo&amp;#x2F;bar&amp;#x2F;  &lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述    默认值&lt;br&gt;source_dir    资源文件夹，这个文件夹用来存放内容。    source&lt;br&gt;public_dir    公共文件夹，这个文件夹用于存放生成的站点文件。    public&lt;br&gt;tag_dir    标签文件夹    tags&lt;br&gt;archive_dir    归档文件夹    archives&lt;br&gt;category_dir    分类文件夹    categories&lt;br&gt;code_dir    Include code 文件夹，source_dir 下的子目录    downloads/code&lt;br&gt;i18n_dir    国际化（i18n）文件夹    :lang&lt;br&gt;skip_render    跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。您可使用 glob 表达式来匹配路径。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;skip_render: &amp;quot;mypage&amp;#x2F;**&amp;#x2F;*&amp;quot;  
+#将会直接将 &amp;#96;source&amp;#x2F;mypage&amp;#x2F;index.html&amp;#96; 和 &amp;#96;source&amp;#x2F;mypage&amp;#x2F;code.js&amp;#96; 不做改动地输出到 &amp;#39;public&amp;#39; 目录  
+#你也可以用这种方法来跳过对指定文章文件的渲染
+skip_render: &amp;quot;_posts&amp;#x2F;test-post.md&amp;quot;  
+#这将会忽略对 &amp;#39;test-post.md&amp;#39; 的渲染&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;提示&lt;/strong&gt;&lt;br&gt;如果您刚刚开始接触 Hexo，通常没有必要修改这一部分的值。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;文章&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述    默认值&lt;br&gt;new_post_name    新文章的文件名称    :title.md&lt;br&gt;default_layout    预设布局    post&lt;br&gt;auto_spacing    在中文和英文之间加入空格    false&lt;br&gt;titlecase    把标题转换为 title case    false&lt;br&gt;external_link    在新标签中打开链接    true&lt;br&gt;external_link.enable    在新标签中打开链接    true&lt;br&gt;external_link.field    对整个网站（site）生效或仅对文章（post）生效    site&lt;br&gt;external_link.exclude    需要排除的域名。主域名和子域名如 www 需分别配置    []&lt;br&gt;filename_case    把文件名称转换为 (1) 小写或 (2) 大写    0&lt;br&gt;render_drafts    显示草稿    false&lt;br&gt;post_asset_folder    启动 Asset 文件夹    false&lt;br&gt;relative_link    把链接改为与根目录的相对位址    false&lt;br&gt;future    显示未来的文章    true&lt;br&gt;highlight    代码块的设置, 请参考 Highlight.js 进行设置&lt;br&gt;prismjs    代码块的设置, 请参考 PrismJS 进行设置  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;相对地址&lt;/strong&gt;&lt;br&gt;默认情况下，Hexo 生成的超链接都是绝对地址。例如，如果您的网站域名为 example.com，您有一篇文章名为 hello，那么绝对链接可能像这样：&lt;a href=&quot;http://example.com/hello.html%EF%BC%8C%E5%AE%83%E6%98%AF%E7%BB%9D%E5%AF%B9%E4%BA%8E%E5%9F%9F%E5%90%8D%E7%9A%84%E3%80%82%E7%9B%B8%E5%AF%B9%E9%93%BE%E6%8E%A5%E5%83%8F%E8%BF%99%E6%A0%B7%EF%BC%9A/hello.html%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4%EF%BC%8C%E6%97%A0%E8%AE%BA%E7%94%A8%E4%BB%80%E4%B9%88%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E8%AF%A5%E7%AB%99%E7%82%B9%EF%BC%8C%E9%83%BD%E6%B2%A1%E6%9C%89%E5%85%B3%E7%B3%BB%EF%BC%8C%E8%BF%99%E5%9C%A8%E8%BF%9B%E8%A1%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%97%B6%E5%8F%AF%E8%83%BD%E7%94%A8%E5%88%B0%E3%80%82%E9%80%9A%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8%E7%BB%9D%E5%AF%B9%E5%9C%B0%E5%9D%80%E3%80%82&quot;&gt;http://example.com/hello.html，它是绝对于域名的。相对链接像这样：/hello.html，也就是说，无论用什么域名访问该站点，都没有关系，这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;分类 &amp;amp; 标签&lt;/strong&gt;  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述    默认值&lt;br&gt;default_category    默认分类    uncategorized&lt;br&gt;category_map    分类别名&lt;br&gt;tag_map    标签别名      &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;日期 / 时间格式&lt;/strong&gt;&lt;br&gt;Hexo 使用 Moment.js 来解析和显示时间。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述    默认值&lt;br&gt;date_format    日期格式    YYYY-MM-DD&lt;br&gt;time_format    时间格式    HH:mm:ss&lt;br&gt;updated_option    当 Front Matter 中没有指定 updated 时 updated 的取值    mtime  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;updated_option&lt;/strong&gt;&lt;br&gt;updated_option 控制了当 Front Matter 中没有指定 &amp;gt; updated 时，updated 如何取值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mtime: 使用文件的最后修改时间。这是从 Hexo 3.0.0 开始的默认行为。&lt;/li&gt;
+&lt;li&gt;date: 使用 date 作为 updated 的值。可被用于 Git 工作流之中，因为使用 Git 管理站点时，文件的最后修改日期常常会发生改变&lt;/li&gt;
+&lt;li&gt;empty: 直接删除 updated。使用这一选项可能会导致大部分主题和插件无法正常工作。&lt;br&gt;use_date_for_updated 选项已经被废弃，将会在下个重大版本发布时去除。请改为使用 updated_option: ‘date’。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;use_date_for_updated | 启用以后，如果 Front Matter 中没有指定 updated， post.updated 将会使用 date 的值而不是文件的创建时间。在 Git 工作流中这个选项会很有用 | true&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分页&lt;/strong&gt;  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述    默认值&lt;br&gt;per_page    每页显示的文章量 (0 = 关闭分页功能)    10&lt;br&gt;pagination_dir    分页目录    page  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述&lt;br&gt;theme    当前主题名称。值为false时禁用主题&lt;br&gt;theme_config    主题的配置文件。在这里放置的配置会覆盖主题目录下的 _config.yml 中的配置&lt;br&gt;deploy    部署部分的设置&lt;br&gt;meta_generator    Meta generator 标签。 值为 false 时 Hexo 不会在头部插入该标签  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;包括或不包括目录和文件&lt;/strong&gt;&lt;br&gt;在 Hexo 配置文件中，通过设置 include/exclude 可以让 Hexo 进行处理或忽略某些目录和文件夹。你可以使用 glob 表达式 对目录和文件进行匹配。&lt;/p&gt;
+&lt;p&gt;include 和 exclude 选项只会应用到 source/ ，而 ignore 选项会应用到所有文件夹.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述&lt;br&gt;include    Hexo 默认会不包括 source/ 下的文件和文件夹（包括名称以下划线和 . 开头的文件和文件夹，Hexo 的 _posts 和 _data 等目录除外）。通过设置此字段将使 Hexo 处理他们并将它们复制到 source 目录下。&lt;br&gt;exclude    Hexo 不包括 source/ 下的这些文件和目录&lt;br&gt;ignore    Hexo 会忽略整个 Hexo 项目下的这些文件夹或文件  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;举例：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;#处理或不处理目录或文件
+include:
+  -&amp;quot;.nojekyll&amp;quot;
+  #处理 &amp;#39;source&amp;#x2F;css&amp;#x2F;_typing.css&amp;#39;
+  -&amp;quot;css&amp;#x2F;_typing.css&amp;quot;
+  #处理 &amp;#39;source&amp;#x2F;_css&amp;#x2F;&amp;#39; 中的任何文件，但不包括子目录及其其中的文件。
+  -&amp;quot;_css&amp;#x2F;*&amp;quot;
+  #处理 &amp;#39;source&amp;#x2F;_css&amp;#x2F;&amp;#39; 中的任何文件和子目录下的任何文件
+  -&amp;quot;_css&amp;#x2F;**&amp;#x2F;*&amp;quot;
+
+exclude:
+  #不处理 &amp;#39;source&amp;#x2F;js&amp;#x2F;test.js&amp;#39;
+  -&amp;quot;js&amp;#x2F;test.js&amp;quot;
+  #不处理 &amp;#39;source&amp;#x2F;js&amp;#x2F;&amp;#39; 中的文件、但包括子目录下的所有目录和文件
+  -&amp;quot;js&amp;#x2F;*&amp;quot;
+  #不处理 &amp;#39;source&amp;#x2F;js&amp;#x2F;&amp;#39; 中的文件和子目录下的任何文件
+  -&amp;quot;js&amp;#x2F;**&amp;#x2F;*&amp;quot;
+  #不处理 &amp;#39;source&amp;#x2F;js&amp;#x2F;&amp;#39; 目录下的所有文件名以 &amp;#39;test&amp;#39; 开头的文件，但包括其它文件和子目录下的单文件
+  -&amp;quot;js&amp;#x2F;test*&amp;quot;
+  #不处理 &amp;#39;source&amp;#x2F;js&amp;#x2F;&amp;#39; 及其子目录中任何以 &amp;#39;test&amp;#39; 开头的文件
+  -&amp;quot;js&amp;#x2F;**&amp;#x2F;test*&amp;quot;
+  #不要用 exclude 来忽略 &amp;#39;source&amp;#x2F;_posts&amp;#x2F;&amp;#39; 中的文件。你应该使用 &amp;#39;skip_render&amp;#39;，或者在要忽略的文件的文件名之前加一个下划线 &amp;#39;_&amp;#39;
+  #在这里配置一个 - &amp;quot;_posts&amp;#x2F;hello-world.md&amp;quot; 是没有用的。
+
+ignore:
+  #忽略任何一个名叫 &amp;#39;foo&amp;#39; 的文件夹
+  -&amp;quot;**&amp;#x2F;foo&amp;quot;
+  #只忽略 &amp;#39;themes&amp;#x2F;&amp;#39; 下的 &amp;#39;foo&amp;#39; 文件夹
+  -&amp;quot;**&amp;#x2F;themes&amp;#x2F;*&amp;#x2F;foo&amp;quot;
+  #对 &amp;#39;themes&amp;#x2F;&amp;#39; 目录下的每个文件夹中忽略名叫 &amp;#39;foo&amp;#39; 的子文件夹
+  -&amp;quot;**&amp;#x2F;themes&amp;#x2F;**&amp;#x2F;foo&amp;quot;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;列表中的每一项都必须用单引号或双引号包裹起来。&lt;/p&gt;
+&lt;p&gt;include 和 exclude 并不适用于 themes/ 目录下的文件。如果需要忽略 themes/ 目录下的部分文件或文件夹，可以使用 ignore 或在文件名之前添加下划线 _。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用代替配置文件&lt;/strong&gt;&lt;br&gt;可以在 hexo-cli 中使用 –config 参数来指定自定义配置文件的路径。你可以使用一个 YAML 或 JSON 文件的路径，也可以使用逗号分隔（无空格）的多个 YAML 或 JSON 文件的路径。例如：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# 用 &amp;#39;custom.yml&amp;#39; 代替 &amp;#39;_config.yml&amp;#39;
+$ hexo server --config custom.yml
+
+# 使用 &amp;#39;custom.yml&amp;#39; 和 &amp;#39;custom2.json&amp;#39;，优先使用 &amp;#39;custom3.yml&amp;#39;，然后是 &amp;#39;custom2.json&amp;#39;
+$ hexo generate --config custom.yml,custom2.json,custom3.yml&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当你指定了多个配置文件以后，Hexo 会按顺序将这部分配置文件合并成一个 _multiconfig.yml。如果遇到重复的配置，排在后面的文件的配置会覆盖排在前面的文件的配置。这个原则适用于任意数量、任意深度的 YAML 和 JSON 文件。&lt;/p&gt;
+&lt;p&gt;例如，使用 –options 指定了两个自定义配置文件：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo generate --config custom.yml,custom2.json&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果 custom.yml 中指定了 foo: bar，在 custom2.json 中指定了 “foo”: “dinosaur”，那么在 _multiconfig.yml 中你会得到 foo: dinosaur。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用代替主题配置文件&lt;/strong&gt;&lt;br&gt;通常情况下，Hexo 主题是一个独立的项目，并拥有一个独立的 _config.yml 配置文件。&lt;/p&gt;
+&lt;p&gt;除了自行维护独立的主题配置文件，你也可以在其它地方对主题进行配置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置文件中的 theme_config&lt;/strong&gt;&lt;br&gt;该特性自 Hexo 2.8.2 起提供&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# _config.yml
+theme: &amp;quot;my-theme&amp;quot;
+theme_config:
+  bio: &amp;quot;My awesome bio&amp;quot;
+  foo:
+    bar: &amp;#39;a&amp;#39;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# themes&amp;#x2F;my-theme&amp;#x2F;_config.yml
+bio: &amp;quot;Some generic bio&amp;quot;
+logo: &amp;quot;a-cool-image.png&amp;quot;
+  foo:
+    baz: &amp;#39;b&amp;#39;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最终主题配置的输出是：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;
+  bio: &amp;quot;My awesome bio&amp;quot;,
+  logo: &amp;quot;a-cool-image.png&amp;quot;,
+  foo: &amp;#123;
+    bar: &amp;quot;a&amp;quot;,
+    baz: &amp;quot;b&amp;quot;
+  &amp;#125;
+&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;独立的 _config.[theme].yml 文件&lt;br&gt;该特性自 Hexo 5.0.0 起提供&lt;br&gt;独立的主题配置文件应放置于站点根目录下，支持 yml 或 json 格式。需要配置站点 _config.yml 文件中的 theme 以供 Hexo 寻找 _config.[theme].yml 文件。  &lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# _config.yml
+theme: &amp;quot;my-theme&amp;quot;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# _config.my-theme.yml
+bio: &amp;quot;My awesome bio&amp;quot;
+foo:
+  bar: &amp;#39;a&amp;#39;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# themes&amp;#x2F;my-theme&amp;#x2F;_config.yml
+bio: &amp;quot;Some generic bio&amp;quot;
+logo: &amp;quot;a-cool-image.png&amp;quot;
+  foo:
+    baz: &amp;#39;b&amp;#39;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最终主题配置的输出是：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;
+  bio: &amp;quot;My awesome bio&amp;quot;,
+  logo: &amp;quot;a-cool-image.png&amp;quot;,
+  foo: &amp;#123;
+    bar: &amp;quot;a&amp;quot;,
+    baz: &amp;quot;b&amp;quot;
+  &amp;#125;
+&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;init&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo init [folder]&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。&lt;/p&gt;
+&lt;p&gt;本命令相当于执行了以下几步：&lt;/p&gt;
+&lt;p&gt;Git clone hexo-starter 和 hexo-theme-landscape 主题到当前目录或指定目录。&lt;br&gt;使用 Yarn 1、pnpm 或 npm 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 Node.js 安装。  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;new&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo new [layout] &amp;lt;title&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo new &amp;quot;post title with whitespace&amp;quot;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述&lt;br&gt;-p, –path    自定义新文章的路径&lt;br&gt;-r, –replace    如果存在同名文章，将其替换&lt;br&gt;-s, –slug    文章的 Slug，作为新文章的文件名和发布后的 URL  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面（也就是layout为page的）来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 index.md 文件。你可以使用 –path 参数来覆盖上述行为、自行决定文件的目录：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;hexo new page --path about&amp;#x2F;me &amp;quot;About me&amp;quot;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上命令会创建一个 source/about/me.md 文件，同时 Front Matter 中的 title 为 “About me”&lt;/p&gt;
+&lt;p&gt;注意！title 是必须指定的！如果你这么做并不能达到你的目的：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;hexo new page --path about&amp;#x2F;me&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此时 Hexo 会创建 source/_posts/about/me.md，同时 me.md 的 Front Matter 中的 title 为 “page”。这是因为在上述命令中，hexo-cli 将 page 视为指定文章的标题、并采用默认的 layout。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;generate&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo generate&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;生成静态文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;选项    描述&lt;br&gt;-d, –deploy    文件生成后立即部署网站&lt;br&gt;-w, –watch    监视文件变动&lt;br&gt;-b, –bail    生成过程中如果发生任何未处理的异常则抛出异常&lt;br&gt;-f, –force    强制重新生成文件  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Hexo 引入了差分机制，如果 public 目录存在，那么 hexo g 只会重新生成改动的文件。&lt;br&gt;使用该参数的效果接近 hexo clean &amp;amp;&amp;amp; hexo generate&lt;br&gt;-c, –concurrency    最大同时生成文件的数量，默认无限制&lt;br&gt;该命令可以简写为&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo g&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;publish&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo publish [layout] &amp;lt;filename&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;发表草稿。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;server&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo server&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动服务器。默认情况下，访问网址为： &lt;a href=&quot;http://localhost:4000/%E3%80%82&quot;&gt;http://localhost:4000/。&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;选项    描述&lt;br&gt;-p, –port    重设端口&lt;br&gt;-s, –static    只使用静态文件&lt;br&gt;-l, –log    启动日记记录，使用覆盖记录格式  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;deploy&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo deploy&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;部署网站。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述&lt;br&gt;-g, –generate    部署之前预先生成静态文件 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;该命令可以简写为：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo d&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;render&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo render &amp;lt;file1&amp;gt; [file2] ...&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;渲染文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述&lt;br&gt;-o, –output    设置输出路径  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;migrate&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo migrate &amp;lt;type&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从其他博客系统 迁移内容。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;clean&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo clean&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;清除缓存文件 (db.json) 和已生成的静态文件 (public)。&lt;/p&gt;
+&lt;p&gt;在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo list &amp;lt;type&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;列出网站资料。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;version&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo version&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;显示 Hexo 版本。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;选项&lt;/strong&gt;&lt;br&gt;安全模式&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo --safe&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。&lt;/p&gt;
+&lt;p&gt;调试模式&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo --debug&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在终端中显示调试信息并记录到 debug.log。当您碰到问题时，可以尝试用调试模式重新执行一次，并 提交调试信息到 GitHub。&lt;/p&gt;
+&lt;p&gt;简洁模式&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo --silent&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;隐藏终端信息。&lt;/p&gt;
+&lt;p&gt;自定义配置文件的路径&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# 使用 custom.yml 代替默认的 _config.yml
+$ hexo server --config custom.yml
+
+# 使用 custom.yml 和 custom2.json，其中 custom2.json 优先级更高
+$ hexo generate --config custom.yml,custom2.json,custom3.yml&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;自定义配置文件的路径，指定这个参数后将不再使用默认的 _config.yml。&lt;br&gt;你可以使用一个 YAML 或 JSON 文件的路径，也可以使用逗号分隔（无空格）的多个 YAML 或 JSON 文件的路径。例如：  &lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# 使用 custom.yml 代替默认的 _config.yml
+$ hexo server --config custom.yml
+
+# 使用 custom.yml, custom2.json 和 custom3.yml，其中 custom3.yml 优先级最高，其次是 custom2.json
+$ hexo generate --config custom.yml,custom2.json,custom3.yml&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当你指定了多个配置文件以后，Hexo 会按顺序将这部分配置文件合并成一个 _multiconfig.yml。如果遇到重复的配置，排在后面的文件的配置会覆盖排在前面的文件的配置。这个原则适用于任意数量、任意深度的 YAML 和 JSON 文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;显示草稿&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo --draft&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;显示 source/_drafts 文件夹中的草稿文章。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自定义 CWD&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo --cwd &amp;#x2F;path&amp;#x2F;to&amp;#x2F;cwd&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;自定义当前工作目录（Current working directory）的路径。&lt;/p&gt;
+&lt;h3 id=&quot;写作&quot;&gt;&lt;a href=&quot;#写作&quot; class=&quot;headerlink&quot; title=&quot;写作&quot;&gt;&lt;/a&gt;写作&lt;/h3&gt;&lt;p&gt;你可以执行下列命令来创建一篇新文章或者新的页面。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo new [layout] &amp;lt;title&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;您可以在命令中指定文章的布局（layout），默认为 post，可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;布局（Layout）&lt;/strong&gt;&lt;br&gt;Hexo 有三种默认布局：post、page 和 draft。在创建这三种不同类型的文件时，它们将会被保存到不同的路径；而您自定义的其他布局和 post 相同，都将储存到 source/_posts 文件夹。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;布局    路径&lt;br&gt;post    source/_posts&lt;br&gt;page    source&lt;br&gt;draft    source/_drafts  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;禁用布局&lt;/strong&gt;&lt;br&gt;如果你不希望一篇文章（post/page）使用主题处理，请在它的 front-matter 中设置 layout: false。详情请参考本节。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;文件名称&lt;/strong&gt;&lt;br&gt;Hexo 默认以标题做为文件名称，但您可编辑 new_post_name 参数来改变默认的文件名称，举例来说，设为 :year-:month-:day-:title.md 可让您更方便的通过日期来管理文章。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;变量    描述&lt;br&gt;:title    标题（小写，空格将会被替换为短杠）&lt;br&gt;:year    建立的年份，比如， 2015&lt;br&gt;:month    建立的月份（有前导零），比如， 04&lt;br&gt;:i_month    建立的月份（无前导零），比如， 4&lt;br&gt;:day    建立的日期（有前导零），比如， 07&lt;br&gt;:i_day    建立的日期（无前导零），比如， 7  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;草稿&lt;/strong&gt;&lt;br&gt;刚刚提到了 Hexo 的一种特殊布局：draft，这种布局在建立时会被保存到 source/_drafts 文件夹，您可通过 publish 命令将草稿移动到 source/_posts 文件夹，该命令的使用方式与 new 十分类似，您也可在命令中指定 layout 来指定布局。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo publish [layout] &amp;lt;title&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;草稿默认不会显示在页面中，您可在执行时加上 –draft 参数，或是把 render_drafts 参数设为 true 来预览草稿。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;模版（Scaffold）&lt;/strong&gt;&lt;br&gt;在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件，例如：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;$ hexo new photo &amp;quot;My Gallery&amp;quot;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，以下是您可以在模版中使用的变量：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;变量    描述&lt;br&gt;layout    布局&lt;br&gt;title    标题&lt;br&gt;date    文件建立日期&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;支持的格式&lt;/strong&gt;&lt;br&gt;Hexo 支持以任何格式书写文章，只要安装了相应的渲染插件。&lt;/p&gt;
+&lt;p&gt;例如，Hexo 默认安装了 hexo-renderer-marked 和 hexo-renderer-ejs，因此你不仅可以用 Markdown 写作，你还可以用 EJS 写作。如果你安装了 hexo-renderer-pug，你甚至可以用 Pug 模板语言书写文章。&lt;/p&gt;
+&lt;p&gt;只需要将文章的扩展名从 md 改成 ejs，Hexo 就会使用 hexo-renderer-ejs 渲染这个文件，其他格式同理。&lt;/p&gt;
+&lt;h3 id=&quot;Front-matter&quot;&gt;&lt;a href=&quot;#Front-matter&quot; class=&quot;headerlink&quot; title=&quot;Front-matter&quot;&gt;&lt;/a&gt;Front-matter&lt;/h3&gt;&lt;p&gt;Front-matter 是文件最上方以 — 分隔的区域，用于指定个别文件的变量，举例来说：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;---
+title: Hello World
+date: 2013&amp;#x2F;7&amp;#x2F;13 20:46:25
+---&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数    描述    默认值&lt;br&gt;layout    布局    config.default_layout&lt;br&gt;title    标题    文章的文件名&lt;br&gt;date    建立日期    文件建立日期&lt;br&gt;updated    更新日期    文件更新日期&lt;br&gt;comments    开启文章的评论功能    true&lt;br&gt;tags    标签（不适用于分页）&lt;br&gt;categories    分类（不适用于分页）&lt;br&gt;permalink    覆盖文章网址&lt;br&gt;excerpt    纯文本的页面摘要。使用 该插件 来格式化文本&lt;br&gt;disableNunjucks    启用时禁用 Nunjucks 标签 和 标签插件 的渲染功能&lt;br&gt;lang    设置语言以覆盖 自动检测    继承自 _config.yml&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;布局&lt;/strong&gt;&lt;br&gt;根据 _config.yml 中 default_layout 的设置，默认布局是 post 。当文章中的布局被禁用(layout: false)，它将不会使用主题处理。然而，它仍然会被任何可用的渲染引擎渲染：如果一篇文章是用 Markdown 写的，并且安装了 Markdown 渲染引擎（比如默认的 hexo-renderer-marked)，它将被渲染成HTML。&lt;/p&gt;
+&lt;p&gt;标签插件 总是被处理，而会不考虑布局，除非被 disableNunjucks 设置或 渲染引擎 禁用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类和标签&lt;/strong&gt;&lt;br&gt;只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 Foo, Bar 不等于 Bar, Foo；而标签没有顺序和层次。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;categories:
+- Diary
+tags:
+- PS3
+- Games&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;分类方法的分歧&lt;br&gt;如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;categories:
+  - Diary
+  - Life&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;会使分类 Life 成为 Diary 的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。&lt;/p&gt;
+&lt;p&gt;如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;categories:
+- [Diary, PlayStation]
+- [Diary, Games]
+- [Life]&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此时这篇文章同时包括三个分类： PlayStation 和 Games 分别都是父分类 Diary 的子分类，同时 Life 是一个没有子分类的分类。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JSON Front-matter&lt;/strong&gt;&lt;br&gt;除了 YAML 外，你也可以使用 JSON 来编写 Front-matter，只要将 — 代换成 ;;; 即可。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;quot;title&amp;quot;: &amp;quot;Hello World&amp;quot;,
+&amp;quot;date&amp;quot;: &amp;quot;2013&amp;#x2F;7&amp;#x2F;13 20:46:25&amp;quot;
+;;;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;标签插件（Tag-Plugins）&quot;&gt;&lt;a href=&quot;#标签插件（Tag-Plugins）&quot; class=&quot;headerlink&quot; title=&quot;标签插件（Tag Plugins）&quot;&gt;&lt;/a&gt;标签插件（Tag Plugins）&lt;/h3&gt;&lt;p&gt;标签插件和 Front-matter 中的标签不同，它们是用于在文章中快速插入特定内容的插件。&lt;/p&gt;
+&lt;p&gt;虽然你可以使用任何格式书写你的文章，但是标签插件永远可用，且语法也都是一致的。&lt;/p&gt;
+&lt;p&gt;标签插件不应该被包裹在 Markdown 语法中，例如： &lt;a href=&quot;!--swig%EF%BF%BC169--&quot;&gt;&lt;/a&gt; 是不被支持的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;引用块&lt;/strong&gt;&lt;br&gt;在文章中插入引言，可包含作者、来源和标题。&lt;/p&gt;
+&lt;p&gt;别号： quote&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% blockquote [author[, source]] [link] [source_link_title] %&amp;#125;
+content
+&amp;#123;% endblockquote %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;样例&lt;/strong&gt;&lt;br&gt;没有提供参数，则只输出普通的 blockquote&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% blockquote %&amp;#125;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
+&amp;#123;% endblockquote %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;引用书上的句子&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% blockquote David Levithan, Wide Awake %&amp;#125;
+Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
+&amp;#123;% endblockquote %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.&lt;br&gt;David LevithanWide Awake&lt;br&gt;引用 Twitter&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% blockquote @DevDocs https:&amp;#x2F;&amp;#x2F;twitter.com&amp;#x2F;devdocs&amp;#x2F;status&amp;#x2F;356095192085962752 %&amp;#125;
+NEW: DevDocs now comes with syntax highlighting. http:&amp;#x2F;&amp;#x2F;devdocs.io
+&amp;#123;% endblockquote %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NEW: DevDocs now comes with syntax highlighting. &lt;a href=&quot;http://devdocs.io/&quot;&gt;http://devdocs.io&lt;/a&gt;&lt;br&gt;@DevDocstwitter.com/devdocs/status/356095192085962752&lt;br&gt;引用网络上的文章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% blockquote Seth Godin http:&amp;#x2F;&amp;#x2F;sethgodin.typepad.com&amp;#x2F;seths_blog&amp;#x2F;2009&amp;#x2F;07&amp;#x2F;welcome-to-island-marketing.html Welcome to Island Marketing %&amp;#125;
+Every interaction is both precious and an opportunity to delight.
+&amp;#123;% endblockquote %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Every interaction is both precious and an opportunity to delight.&lt;br&gt;Seth GodinWelcome to Island Marketing&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;代码块&lt;/strong&gt;&lt;br&gt;在文章中插入代码。&lt;/p&gt;
+&lt;p&gt;别名： code&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&amp;#125;
+code snippet
+&amp;#123;% endcodeblock %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以 option:value 的格式指定额外选项，例如：line_number:false first_line:5。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;额外选项    描述    默认值&lt;br&gt;line_number    显示行号    true&lt;br&gt;line_threshold    只有代码块的行数超过该阈值，才显示行数    0&lt;br&gt;highlight    启用代码高亮    true&lt;br&gt;first_line    指定第一个行号    1&lt;br&gt;mark    突出显示特定的行，每个值用逗号分隔。 使用破折号指定数字范围 ,例如： mark:1,4-7,10 将标记第1、4至7和10行&lt;br&gt;wrap    用 &amp;lt;table&amp;gt; 包裹代码块    true &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;样例&lt;/strong&gt;&lt;br&gt;普通的代码块&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% codeblock %&amp;#125;
+alert(&amp;#39;Hello World!&amp;#39;);
+&amp;#123;% endcodeblock %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;alert(&amp;#39;Hello World!&amp;#39;);&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;指定语言&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% codeblock lang:objc %&amp;#125;
+[rectangle setX: 10 y: 10 width: 20 height: 20];
+&amp;#123;% endcodeblock %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;[rectangle setX: 10 y: 10 width: 20 height: 20];&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;附加说明&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% codeblock Array.map %&amp;#125;
+array.map(callback[, thisArg])
+&amp;#123;% endcodeblock %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;Array.map
+array.map(callback[, thisArg])&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;附加说明和网址&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% codeblock _.compact http:&amp;#x2F;&amp;#x2F;underscorejs.org&amp;#x2F;#compact Underscore.js %&amp;#125;
+_.compact([0, 1, false, 2, &amp;#39;&amp;#39;, 3]);
+&amp;#x3D;&amp;gt; [1, 2, 3]
+&amp;#123;% endcodeblock %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;_.compact             Underscore.js
+_.compact([0, 1, false, 2, &amp;#39;&amp;#39;, 3]);
+&amp;#x3D;&amp;gt; [1, 2, 3]&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;反引号代码块&lt;/strong&gt;&lt;br&gt;另一种形式的代码块，不同的是它使用三个反引号来包裹。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#96;&amp;#96;&amp;#96; [language] [title] [url] [link text] code snippet &amp;#96;&amp;#96;&amp;#96;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Pull Quote&lt;/strong&gt;&lt;br&gt;在文章中插入 Pull quote。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% pullquote [class] %&amp;#125;
+content
+&amp;#123;% endpullquote %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;jsFiddle&lt;/strong&gt;&lt;br&gt;在文章中嵌入 jsFiddle。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% jsfiddle shorttag [tabs] [skin] [width] [height] %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Gist&lt;/strong&gt;&lt;br&gt;在文章中嵌入 Gist。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% gist gist_id [filename] %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;iframe&lt;/strong&gt;&lt;br&gt;在文章中插入 iframe。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% iframe url [width] [height] %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Image&lt;/strong&gt;&lt;br&gt;在文章中插入指定大小的图片。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% img [class names] &amp;#x2F;path&amp;#x2F;to&amp;#x2F;image [width] [height] &amp;#39;&amp;quot;title text&amp;quot; &amp;quot;alt text&amp;quot;&amp;#39; %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Link&lt;/strong&gt;&lt;br&gt;在文章中插入链接，并自动给外部链接添加 target=”_blank” 属性。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% link text url [external] [title] %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Include Code&lt;/strong&gt;&lt;br&gt;插入 source/downloads/code 文件夹内的代码文件。source/downloads/code 不是固定的，取决于你在配置文件中 code_dir 的配置。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% include_code [title] [lang:language] [from:line] [to:line] path&amp;#x2F;to&amp;#x2F;file %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;样例&lt;/strong&gt;&lt;br&gt;嵌入 test.js 文件全文&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% include_code lang:javascript test.js %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;只嵌入第 3 行&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% include_code lang:javascript from:3 to:3 test.js %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;嵌入第 5 行至第 8 行&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% include_code lang:javascript from:5 to:8 test.js %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;嵌入第 5 行至文件结束&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% include_code lang:javascript from:5 test.js %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;嵌入第 1 行至第 8 行&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% include_code lang:javascript to:8 test.js %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Youtube&lt;/strong&gt;&lt;br&gt;在文章中插入 Youtube 视频。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% youtube video_id [type] [cookie] %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples&lt;br&gt;视频&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% youtube lJIrF4YjHfQ %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;播放列表&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% youtube PL9hW1uS6HUfscJ9DHkOSoOX45MjXduUxo &amp;#39;playlist&amp;#39; %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;隐私模式&lt;/p&gt;
+&lt;p&gt;禁止 YouTube cookie&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% youtube lJIrF4YjHfQ false %&amp;#125;
+&amp;#123;% youtube PL9hW1uS6HUfscJ9DHkOSoOX45MjXduUxo &amp;#39;playlist&amp;#39; false %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Vimeo&lt;/strong&gt;&lt;br&gt;在文章中插入 Vimeo 视频。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% vimeo video_id %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;引用文章&lt;/strong&gt;&lt;br&gt;引用其他文章的链接。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% post_path filename %&amp;#125;
+&amp;#123;% post_link filename [title] [escape] %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。&lt;/p&gt;
+&lt;p&gt;例如，在文章中使用 &lt;a href=&quot;#&quot;&gt;Post not found: how-to-bake-a-cake&lt;/a&gt; 时，只需有一个名为 how-to-bake-a-cake.md 的文章文件即可。即使这个文件位于站点文件夹的 source/posts/2015-02-my-family-holiday 目录下、或者文章的永久链接是 2018/en/how-to-bake-a-cake，都没有影响。&lt;/p&gt;
+&lt;p&gt;默认链接文字是文章的标题，你也可以自定义要显示的文本。&lt;/p&gt;
+&lt;p&gt;默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用escape选项，禁止对特殊字符进行转义。&lt;/p&gt;
+&lt;p&gt;链接使用文章的标题&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% post_link hexo-3-8-released %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hexo 3.8.0 Released&lt;br&gt;链接使用自定义文字&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% post_link hexo-3-8-released &amp;#39;通往文章的链接&amp;#39; %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通往文章的链接&lt;br&gt;对标题的特殊字符进行转义&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% post_link hexo-4-released &amp;#39;How to use &amp;lt;b&amp;gt; tag in title&amp;#39; %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;How to use &amp;lt;b&amp;gt; tag in title&lt;br&gt;禁止对标题的特殊字符进行转义&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% post_link hexo-4-released &amp;#39;&amp;lt;b&amp;gt;bold&amp;lt;&amp;#x2F;b&amp;gt; custom title&amp;#39; false %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;bold custom title&lt;br&gt;&lt;strong&gt;引用资源&lt;/strong&gt;&lt;br&gt;引用文章的资源。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% asset_path filename %&amp;#125;
+&amp;#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&amp;#125;
+&amp;#123;% asset_link filename [title] [escape] %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Embed image&lt;br&gt;hexo-renderer-marked 3.1.0+ 可以（可选）自动解析图片的文章路径，参考 本节 如何启用它。&lt;/p&gt;
+&lt;p&gt;“foo.jpg” 位于 &lt;a href=&quot;http://example.com/2020/01/02/hello/foo.jpg%E3%80%82&quot;&gt;http://example.com/2020/01/02/hello/foo.jpg。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Default (no option)&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% asset_img foo.jpg %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;lt;img src&amp;#x3D;&amp;quot;&amp;#x2F;2020&amp;#x2F;01&amp;#x2F;02&amp;#x2F;hello&amp;#x2F;foo.jpg&amp;quot;&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Custom class&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% asset_img post-image foo.jpg %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;lt;img src&amp;#x3D;&amp;quot;&amp;#x2F;2020&amp;#x2F;01&amp;#x2F;02&amp;#x2F;hello&amp;#x2F;foo.jpg&amp;quot; class&amp;#x3D;&amp;quot;post-image&amp;quot;&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Display size&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% asset_img foo.jpg 500 400 %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;lt;img src&amp;#x3D;&amp;quot;&amp;#x2F;2020&amp;#x2F;01&amp;#x2F;02&amp;#x2F;hello&amp;#x2F;foo.jpg&amp;quot; width&amp;#x3D;&amp;quot;500&amp;quot; height&amp;#x3D;&amp;quot;400&amp;quot;&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Title &amp;amp; Alt&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% asset_img logo.svg &amp;quot;lorem ipsum&amp;#39;dolor&amp;#39;&amp;quot; %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;lt;img src&amp;#x3D;&amp;quot;&amp;#x2F;2020&amp;#x2F;01&amp;#x2F;02&amp;#x2F;hello&amp;#x2F;foo.jpg&amp;quot; title&amp;#x3D;&amp;quot;lorem ipsum&amp;quot; alt&amp;#x3D;&amp;quot;dolor&amp;quot;&amp;gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Raw&lt;/strong&gt;&lt;br&gt;如果您想在文章中插入 Swig 标签，可以尝试使用 Raw 标签，以免发生解析异常。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;#123;% raw %&amp;#125;
+content
+&amp;#123;% endraw %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;文章摘要和截断&lt;/strong&gt;&lt;br&gt;在文章中使用</summary>
+    
+    
+    
+    <category term="博客" scheme="https://zoili.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="hexo" scheme="https://zoili.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>PowerDesigner安装+破解+汉化</title>
