@@ -6,7 +6,7 @@
   <link href="https://zoili.github.io/atom.xml" rel="self"/>
   
   <link href="https://zoili.github.io/"/>
-  <updated>2023-01-17T09:49:49.419Z</updated>
+  <updated>2023-02-03T09:35:17.683Z</updated>
   <id>https://zoili.github.io/</id>
   
   <author>
@@ -17,11 +17,88 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hexouse</title>
+    <title>数字证书原理</title>
+    <link href="https://zoili.github.io/2023/02/03/digitcert/"/>
+    <id>https://zoili.github.io/2023/02/03/digitcert/</id>
+    <published>2023-02-03T04:35:03.000Z</published>
+    <updated>2023-02-03T09:35:17.683Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考链接&lt;a href=&quot;https://www.cnblogs.com/jtlgb/p/6187444.html&quot;&gt;https://www.cnblogs.com/jtlgb/p/6187444.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;数字证书原理&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="网络" scheme="https://zoili.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="网络" scheme="https://zoili.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个 TCP 连接可以发多少个 HTTP 请求</title>
+    <link href="https://zoili.github.io/2023/02/03/maxtcphttpcon/"/>
+    <id>https://zoili.github.io/2023/02/03/maxtcphttpcon/</id>
+    <published>2023-02-03T03:35:03.000Z</published>
+    <updated>2023-02-03T02:03:20.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;曾经有这么一道经典面试题：从 URL 在浏览器被被输入到页面展现的过程中发生了什么？&lt;/p&gt;
+&lt;p&gt;相信大多数准备过的同学都能回答出来，但是如果继续问：收到的 HTML</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="https://zoili.github.io/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="https://zoili.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一台服务器最大能支持多少条 TCP 连接</title>
+    <link href="https://zoili.github.io/2023/02/02/maxtcpcon/"/>
+    <id>https://zoili.github.io/2023/02/02/maxtcpcon/</id>
+    <published>2023-02-02T03:35:03.000Z</published>
+    <updated>2023-02-02T10:01:09.032Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、一台服务器最大能打开的文件数&quot;&gt;&lt;a href=&quot;#一、一台服务器最大能打开的文件数&quot; class=&quot;headerlink&quot; title=&quot;一、一台服务器最大能打开的文件数&quot;&gt;&lt;/a&gt;一、一台服务器最大能打开的文件数&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="https://zoili.github.io/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="https://zoili.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo的使用和原理</title>
     <link href="https://zoili.github.io/2023/01/16/hexouse/"/>
     <id>https://zoili.github.io/2023/01/16/hexouse/</id>
     <published>2023-01-16T09:15:16.000Z</published>
-    <updated>2023-01-17T09:49:49.419Z</updated>
+    <updated>2023-02-02T09:45:10.383Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;hexo的使用和原理&quot;&gt;&lt;a href=&quot;#hexo的使用和原理&quot; class=&quot;headerlink&quot; title=&quot;hexo的使用和原理&quot;&gt;&lt;/a&gt;hexo的使用和原理&lt;/h1&gt;&lt;p&gt;本博客使用hexo搭建，hexo是一个静态网站生成工具，只需要关注md等格式的文章编写和选择成熟的hexo主题，运用hexo工具基本上能生成一个相对可以的静态博客系统，这个博客系统可以部署到github上免费提供的静态网站服务gitpage。&lt;br&gt;现在我了解了hexo，像还有vuepress也是静态网站工具，还有wordpress也是网站工具，不过wordpress是带php后台的，后面打算了解一下wordpress和用wordpress搭一个平台，到最后结合hexo主题以及wordpress一些内容，自己使用vue和java或cpp后台搭建一个网站。&lt;br&gt;言归正传，hexo的参考网站如下：&lt;br&gt;官网：&lt;a href=&quot;https://hexo.io/zh-cn/index.html&quot;&gt;https://hexo.io/zh-cn/index.html&lt;/a&gt;&lt;br&gt;原理：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/348093645&quot;&gt;https://zhuanlan.zhihu.com/p/348093645&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.jianshu.com/p/a938da5ddb5d&quot;&gt;https://www.jianshu.com/p/a938da5ddb5d&lt;/a&gt;&lt;br&gt;搭建过程：&lt;a href=&quot;https://blog.csdn.net/sinat_37781304/article/details/82729029&quot;&gt;https://blog.csdn.net/sinat_37781304/article/details/82729029&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_45019350/article/details/121901433&quot;&gt;https://blog.csdn.net/weixin_45019350/article/details/121901433&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.cnblogs.com/thanksblog/p/12900165.html&quot;&gt;https://www.cnblogs.com/thanksblog/p/12900165.html&lt;/a&gt;&lt;/p&gt;
