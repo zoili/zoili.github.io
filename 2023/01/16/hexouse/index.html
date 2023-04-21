@@ -396,14 +396,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-04-20
+                    2023-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17.2k
+                    17.4k
                 </div>
                 
 
@@ -1405,6 +1405,7 @@ $ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <p>创建一个和你用户名相同的仓库，后面加.github.io，只有这样，将来要部署到GitHub page的时候，才会被识别，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。我这里是已经建过了。</p>
 <p><img src="/images/hexouse2.png"></p>
 <h3 id="2-生成SSH添加到GitHub"><a href="#2-生成SSH添加到GitHub" class="headerlink" title="2.生成SSH添加到GitHub"></a>2.生成SSH添加到GitHub</h3><p>这一步没有必要，SSH的配置只是为了能让你免输入自己的github密码提交，只是通过ssh的凭证来验证你的github身份，你如果喜欢用密码提交的话，这一步ssh的绑定可以跳过，不操作。</p>
+<p>远程仓库一般支持两种协议：SSH和HTTPS，SSH协议只认机器，HTTPS协议只认账号；也即为：如果使用SSH操作远程仓库的话，我们需要使用公钥和私钥对来做权限的认证，如果使用HTTPS操作远程仓库，则需要使用账号密码来做权限的认证。无论是公钥私钥对，还是账号密码，都只做权限的认证；但是远程仓库里需要记录这些提交记录是由谁来完成的；所以我们需要给本地的git设置用户名和邮箱，用于从本地仓库向远程仓库提交记录时，在远程仓库记录下这些操作是由谁来完成的</p>
 <p>回到你的git bash中，</p>
 <pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;yourname&quot;
 git config --global user.email &quot;youremail&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -1861,7 +1862,7 @@ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">56.5k</span>
+                        class="white-color">56.9k</span>
             
             
             

@@ -398,14 +398,14 @@ https://zhuanlan.zhihu.com/p/369486197https://blo">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-04-20
+                    2023-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.3k
                 </div>
                 
 
@@ -463,6 +463,10 @@ https://zhuanlan.zhihu.com/p/369486197https://blo">
 <p>But，无论是 GitHub，还是 Git，我们都是单独或者说是独立操作的，并没有将两者绑定啊！也就是说，我们现在只能通过 GitHub 下载代码，并不能通过 Git 向 GitHub 提交代码。</p>
 <p>因此，在本篇博文中，我们就一起完成 Git 和 GitHub 的绑定，体验通过 Git 向 GitHub 提交代码的能力。不过在这之前，我们需要先了解 SSh（安全外壳协议），因为在 GitHub 上，一般都是通过 SSH 来授权的，而且大多数 Git 服务器也会选择使用 SSH 公钥来进行授权，所以想要向 GitHub 提交代码，首先就得在 GitHub 上添加 SSH key配置。</p>
 <p>SSH的配置只是为了能让你免输入自己的github密码提交，只是通过ssh的凭证来验证你的github身份，你如果喜欢用密码提交的话，这一步ssh的绑定可以跳过，不操作。</p>
+<p>远程仓库一般支持两种协议：SSH和HTTPS，SSH协议只认机器，HTTPS协议只认账号；也即为：如果使用SSH操作远程仓库的话，我们需要使用公钥和私钥对来做权限的认证，如果使用HTTPS操作远程仓库，则需要使用账号密码来做权限的认证。无论是公钥私钥对，还是账号密码，都只做权限的认证；但是远程仓库里需要记录这些提交记录是由谁来完成的；所以我们需要给本地的git设置用户名和邮箱，用于从本地仓库向远程仓库提交记录时，在远程仓库记录下这些操作是由谁来完成的</p>
+<pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;yourname&quot;
+git config --global user.email &quot;youremail&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h4 id="第-1-步：生成-SSH-key"><a href="#第-1-步：生成-SSH-key" class="headerlink" title="第 1 步：生成 SSH key"></a>第 1 步：生成 SSH key</h4><p>我们要想生成SSH key，首先就得先安装 SSH，对于 Linux 和 Mac 系统，其默认是安装 SSH 的，而对于 Windows 系统，其默认是不安装 SSH 的，不过由于我们安装了 Git Bash，其也应该自带了 SSH. 可以通过在 Git Bash 中输入ssh命令，查看本机是否安装 SSH：</p>
 <p><img src="/images/githubrepo4.webp"></p>
 <p>如上图所示，此结果表示我们已经安装 SSH 啦！接下来，输入ssh-keygen -t rsa命令，表示我们指定 RSA 算法生成密钥，然后敲三次回车键，期间不需要输入密码，之后就就会生成两个文件，分别为id_rsa和id_rsa.pub，即密钥id_rsa和公钥id_rsa.pub. 对于这两个文件，其都为隐藏文件，默认生成在以下目录：</p>
@@ -477,7 +481,7 @@ https://zhuanlan.zhihu.com/p/369486197https://blo">
 <p>如上图所示，进入Settings页面后，再点击SSH and GPG Keys进入此子界面，然后点击New SSH key按钮：</p>
 <p><img src="/images/githubrepo7.webp"></p>
 <p>如上图所示，我们只需要将公钥id_rsa.pub的内容粘贴到Key处的位置（Titles的内容不填写也没事），然后点击Add SSH key 即可。</p>
-<h4 id="第-3-步：验证绑定是否成功"><a href="#第-3-步：验证绑定是否成功" class="headerlink" title="第 3 步：验证绑定是否成功"></a>第 3 步：验证绑定是否成功</h4><p>在我们添加完SSH key之后，也没有明确的通知告诉我们绑定成功啊！不过我们可以通过在 Git Bash 中输入ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>进行测试：</p>
+<h4 id="第-3-步：验证绑定是否成功"><a href="#第-3-步：验证绑定是否成功" class="headerlink" title="第 3 步：验证绑定是否成功"></a>第 3 步：验证绑定是否成功</h4><p>在我们添加完SSH key之后，也没有明确的通知告诉我们绑定成功啊！不过我们可以通过在 Git Bash 中输入ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#109;</a>进行测试：</p>
 <p><img src="/images/githubrepo8.webp"></p>
 <p>如上图所示，此结果即为Git 与 GitHub 绑定成功的标志</p>
 <h3 id="通过-Git-将代码提交到-GitHub"><a href="#通过-Git-将代码提交到-GitHub" class="headerlink" title="通过 Git 将代码提交到 GitHub"></a>通过 Git 将代码提交到 GitHub</h3><p>当我们通过git clone或git remote add origin … 或git fecth或git pull来拉取githbu上的仓库到本地后，本地就和远程有了关联，我们可以通过命令 git push或git push origin master命令来推送本地代码到github仓库</p>
@@ -974,7 +978,7 @@ https://zhuanlan.zhihu.com/p/369486197https://blo">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">56.5k</span>
+                        class="white-color">56.9k</span>
             
             
             
