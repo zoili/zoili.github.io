@@ -6,7 +6,7 @@
   <link href="https://zoili.github.io/atom.xml" rel="self"/>
   
   <link href="https://zoili.github.io/"/>
-  <updated>2023-02-03T09:35:17.683Z</updated>
+  <updated>2022-11-30T06:45:15.085Z</updated>
   <id>https://zoili.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>c++左值、右值、移动语义及完美转发</title>
+    <link href="https://zoili.github.io/2023/04/03/cppmove/"/>
+    <id>https://zoili.github.io/2023/04/03/cppmove/</id>
+    <published>2023-04-03T12:41:14.906Z</published>
+    <updated>2022-11-30T06:45:15.085Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;c-左值、右值、移动语义及完美转发&quot;&gt;&lt;a href=&quot;#c-左值、右值、移动语义及完美转发&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://zoili.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
+    
+    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>数字证书原理</title>
@@ -98,7 +125,7 @@
     <link href="https://zoili.github.io/2023/01/16/hexouse/"/>
     <id>https://zoili.github.io/2023/01/16/hexouse/</id>
     <published>2023-01-16T09:15:16.000Z</published>
-    <updated>2023-02-02T09:45:10.383Z</updated>
+    <updated>2023-04-20T13:14:22.876Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;hexo的使用和原理&quot;&gt;&lt;a href=&quot;#hexo的使用和原理&quot; class=&quot;headerlink&quot; title=&quot;hexo的使用和原理&quot;&gt;&lt;/a&gt;hexo的使用和原理&lt;/h1&gt;&lt;p&gt;本博客使用hexo搭建，hexo是一个静态网站生成工具，只需要关注md等格式的文章编写和选择成熟的hexo主题，运用hexo工具基本上能生成一个相对可以的静态博客系统，这个博客系统可以部署到github上免费提供的静态网站服务gitpage。&lt;br&gt;现在我了解了hexo，像还有vuepress也是静态网站工具，还有wordpress也是网站工具，不过wordpress是带php后台的，后面打算了解一下wordpress和用wordpress搭一个平台，到最后结合hexo主题以及wordpress一些内容，自己使用vue和java或cpp后台搭建一个网站。&lt;br&gt;言归正传，hexo的参考网站如下：&lt;br&gt;官网：&lt;a href=&quot;https://hexo.io/zh-cn/index.html&quot;&gt;https://hexo.io/zh-cn/index.html&lt;/a&gt;&lt;br&gt;原理：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/348093645&quot;&gt;https://zhuanlan.zhihu.com/p/348093645&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.jianshu.com/p/a938da5ddb5d&quot;&gt;https://www.jianshu.com/p/a938da5ddb5d&lt;/a&gt;&lt;br&gt;搭建过程：&lt;a href=&quot;https://blog.csdn.net/sinat_37781304/article/details/82729029&quot;&gt;https://blog.csdn.net/sinat_37781304/article/details/82729029&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_45019350/article/details/121901433&quot;&gt;https://blog.csdn.net/weixin_45019350/article/details/121901433&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.cnblogs.com/thanksblog/p/12900165.html&quot;&gt;https://www.cnblogs.com/thanksblog/p/12900165.html&lt;/a&gt;&lt;/p&gt;
@@ -719,7 +746,7 @@ content
     <link href="https://zoili.github.io/2022/12/09/githubrepo/"/>
     <id>https://zoili.github.io/2022/12/09/githubrepo/</id>
     <published>2022-12-09T09:23:47.000Z</published>
-    <updated>2022-12-12T06:44:45.757Z</updated>
+    <updated>2023-04-20T13:14:28.216Z</updated>
     
     
       
@@ -763,33 +790,6 @@ content
     <category term="openssl" scheme="https://zoili.github.io/tags/openssl/"/>
     
     <category term="mysys" scheme="https://zoili.github.io/tags/mysys/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>c++左值、右值、移动语义及完美转发</title>
-    <link href="https://zoili.github.io/2022/11/28/cppmove/"/>
-    <id>https://zoili.github.io/2022/11/28/cppmove/</id>
-    <published>2022-11-28T03:08:44.556Z</published>
-    <updated>2022-11-30T06:45:15.085Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;c-左值、右值、移动语义及完美转发&quot;&gt;&lt;a href=&quot;#c-左值、右值、移动语义及完美转发&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="编程" scheme="https://zoili.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="c++" scheme="https://zoili.github.io/tags/c/"/>
-    
-    <category term="c" scheme="https://zoili.github.io/tags/c/"/>
     
   </entry>
   

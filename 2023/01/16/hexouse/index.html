@@ -396,21 +396,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-02
+                    2023-04-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17.1k
+                    17.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    70 分
+                    71 分
                 </div>
                 
 
@@ -1404,7 +1404,8 @@ $ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <p>注册完登录后，在GitHub.com中看到一个New repository，新建仓库<br><img src="/images/hexouse1.png"></p>
 <p>创建一个和你用户名相同的仓库，后面加.github.io，只有这样，将来要部署到GitHub page的时候，才会被识别，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。我这里是已经建过了。</p>
 <p><img src="/images/hexouse2.png"></p>
-<h3 id="2-生成SSH添加到GitHub"><a href="#2-生成SSH添加到GitHub" class="headerlink" title="2.生成SSH添加到GitHub"></a>2.生成SSH添加到GitHub</h3><p>回到你的git bash中，</p>
+<h3 id="2-生成SSH添加到GitHub"><a href="#2-生成SSH添加到GitHub" class="headerlink" title="2.生成SSH添加到GitHub"></a>2.生成SSH添加到GitHub</h3><p>这一步没有必要，SSH的配置只是为了能让你免输入自己的github密码提交，只是通过ssh的凭证来验证你的github身份，你如果喜欢用密码提交的话，这一步ssh的绑定可以跳过，不操作。</p>
+<p>回到你的git bash中，</p>
 <pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;yourname&quot;
 git config --global user.email &quot;youremail&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>这里的yourname输入你的GitHub用户名，youremail输入你GitHub的邮箱。这样GitHub才能知道你是不是对应它的账户。</p>
@@ -1430,7 +1431,7 @@ git config user.email<span aria-hidden="true" class="line-numbers-rows"><span></
 hexo generate
 hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>其中 hexo clean清除了你之前生成的东西，也可以不加。<br>hexo generate 顾名思义，生成静态文章，可以用 hexo g缩写<br>hexo deploy 部署文章，可以用hexo d缩写  </p>
-<p>注意deploy时可能要你输入username和password。</p>
+<p>注意deploy时可能要你输入github的username和password，还要输入开发用的用户名和密码（token），详见其他文章《github仓库的创建、克隆、拉取和推送》。</p>
 <p>得到下图就说明部署成功了，过一会儿就可以在<a target="_blank" rel="noopener" href="http://yourname.github.io/">http://yourname.github.io</a> 这个网站看到你的博客了！！</p>
 <p><img src="/images/hexouse5.png"></p>
 
@@ -1860,7 +1861,7 @@ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">56.2k</span>
+                        class="white-color">56.5k</span>
             
             
             
