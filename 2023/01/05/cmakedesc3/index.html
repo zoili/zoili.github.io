@@ -1,0 +1,1527 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="cmake生成器表达式, Zoin&#39;s Space">
+    <meta name="description" content="cmake生成器表达式参考：官方文档和官方教程：https://cmake.org/cmake/help/latest/index.htmlhttps://cmake.org/cmake/help/latest/guide/tutorial">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>cmake生成器表达式 | Zoin&#39;s Space</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zoin&#39;s Space</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zoin&#39;s Space</div>
+        <div class="logo-desc">
+            
+            c++ cmake openssl github https 数字证书 移动语义
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">cmake生成器表达式</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/cmake/">
+                                <span class="chip bg-color">cmake</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="post-category">
+                                编译安装
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-01-05
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="cmake生成器表达式"><a href="#cmake生成器表达式" class="headerlink" title="cmake生成器表达式"></a>cmake生成器表达式</h1><p>参考：<br>官方文档和官方教程：<br><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/index.html">https://cmake.org/cmake/help/latest/index.html</a><br><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></p>
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>1.先自己跟着教程走一遍，有个大概了解  </p>
+<p><img src="/images/cmakedesccomm1.jpg"></p>
+<p>2.命令行–这里只讲解cmake命令，ctest和cpack都比较简单，自己去官网上看看就好<br><img src="/images/cmakedesccomm2.jpg"></p>
+<p>3.其他，比如构建系统、cmake里面的命令、cmake内部属性变量、cmake生成器表达式、cmake语法等等<br>只讲如下标红框的内容</p>
+<p><img src="/images/cmakedesccomm3.jpg"></p>
+<h2 id="cmake生成器表达式-1"><a href="#cmake生成器表达式-1" class="headerlink" title="cmake生成器表达式"></a>cmake生成器表达式</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>生成器表达式在生成构建系统期间进行计算，以生成特定于每个构建配置的信息。它们的形式是$&lt;…&gt;。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_include_directories</span>(tgt PRIVATE /opt/<span class="keyword">include</span>/$&lt;CXX_COMPILER_ID&gt;)</span><br></pre></td></tr></table></figure>
+
+<p>这将扩展到&#x2F;opt&#x2F;include&#x2F;GNU， &#x2F;opt&#x2F;include&#x2F;Clang等，这取决于所使用的c++编译器。</p>
+<p>生成器表达式可以在许多目标属性的上下文中使用，如LINK_LIBRARIES、INCLUDE_DIRECTORIES、COMPILE_DEFINITIONS等。它们也可以在使用命令填充这些属性时使用，例如target_link_libraries()、target_include_directories()、target_compile_definitions()等。它们支持条件链接、编译时使用的条件定义、条件包含目录等等。条件可能基于构建配置、目标属性、平台信息或任何其他可查询信息。</p>
+<p>生成器表达式可以嵌套:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_compile_definitions</span>(tgt PRIVATE</span><br><span class="line">  $&lt;$&lt;<span class="keyword">VERSION_LESS</span>:$&lt;CXX_COMPILER_VERSION&gt;,<span class="number">4.2</span>.<span class="number">0</span>&gt;:OLD_COMPILER&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如果CMAKE_CXX_COMPILER_VERSION小于4.2.0，则上述内容将扩展为OLD_COMPILER。</p>
+<h3 id="空格和引号"><a href="#空格和引号" class="headerlink" title="空格和引号"></a>空格和引号</h3><p>生成器表达式通常在命令参数之后进行解析。如果生成器表达式包含空格、新行、分号或其他可能被解释为命令参数分隔符的字符，则整个表达式在传递给命令时应该用引号括起来。如果不这样做，可能会导致表达式被拆分，并且可能不再将其识别为生成器表达式。</p>
+<p>当使用add_custom_command()或add_custom_target()时，使用VERBATIM和COMMAND_EXPAND_LISTS选项来获得健壮的参数分割和引用。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># WRONG: Embedded space will be treated as an argument separator.</span></span><br><span class="line"><span class="comment"># This ends up not being seen as a generator expression at all.</span></span><br><span class="line"><span class="keyword">add_custom_target</span>(run_some_tool</span><br><span class="line">  <span class="keyword">COMMAND</span> some_tool -I$&lt;JOIN:$&lt;TARGET_PROPERTY:tgt,<span class="keyword">INCLUDE_DIRECTORIES</span>&gt;, -I&gt;</span><br><span class="line">  VERBATIM</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Better, but still not robust. Quotes prevent the space from splitting the</span></span><br><span class="line"><span class="comment"># expression. However, the tool will receive the expanded value as a single</span></span><br><span class="line"><span class="comment"># argument.</span></span><br><span class="line"><span class="keyword">add_custom_target</span>(run_some_tool</span><br><span class="line">  <span class="keyword">COMMAND</span> some_tool <span class="string">&quot;-I$&lt;JOIN:$&lt;TARGET_PROPERTY:tgt,INCLUDE_DIRECTORIES&gt;, -I&gt;&quot;</span></span><br><span class="line">  VERBATIM</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Nearly correct. Using a semicolon to separate arguments and adding the</span></span><br><span class="line"><span class="comment"># COMMAND_EXPAND_LISTS option means that paths with spaces will be handled</span></span><br><span class="line"><span class="comment"># correctly. Quoting the whole expression ensures it is seen as a generator</span></span><br><span class="line"><span class="comment"># expression. But if the target property is empty, we will get a bare -I</span></span><br><span class="line"><span class="comment"># with nothing after it.</span></span><br><span class="line"><span class="keyword">add_custom_target</span>(run_some_tool</span><br><span class="line">  <span class="keyword">COMMAND</span> some_tool <span class="string">&quot;-I$&lt;JOIN:$&lt;TARGET_PROPERTY:tgt,INCLUDE_DIRECTORIES&gt;,;-I&gt;&quot;</span></span><br><span class="line">  COMMAND_EXPAND_LISTS</span><br><span class="line">  VERBATIM</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>使用变量构建更复杂的生成器表达式也是减少错误和提高可读性的好方法。上面的例子可以进一步改进如下:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># The $&lt;BOOL:...&gt; check prevents adding anything if the property is empty,</span></span><br><span class="line"><span class="comment"># assuming the property value cannot be one of CMake&#x27;s false constants.</span></span><br><span class="line"><span class="keyword">set</span>(prop <span class="string">&quot;$&lt;TARGET_PROPERTY:tgt,INCLUDE_DIRECTORIES&gt;&quot;</span>)</span><br><span class="line"><span class="keyword">add_custom_target</span>(run_some_tool</span><br><span class="line">  <span class="keyword">COMMAND</span> some_tool <span class="string">&quot;$&lt;$&lt;BOOL:$&#123;prop&#125;&gt;:-I$&lt;JOIN:$&#123;prop&#125;,;-I&gt;&gt;&quot;</span></span><br><span class="line">  COMMAND_EXPAND_LISTS</span><br><span class="line">  VERBATIM</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>一个常见的错误是尝试用缩进将生成器表达式分割到多行:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># WRONG: New lines and spaces all treated as argument separators, so the</span></span><br><span class="line"><span class="comment"># generator expression is split and not recognized correctly.</span></span><br><span class="line"><span class="keyword">target_compile_definitions</span>(tgt PRIVATE</span><br><span class="line">  $&lt;$&lt;<span class="keyword">AND</span>:</span><br><span class="line">      $&lt;CXX_COMPILER_ID:GNU&gt;,</span><br><span class="line">      $&lt;<span class="keyword">VERSION_GREATER_EQUAL</span>:$&lt;CXX_COMPILER_VERSION&gt;,<span class="number">5</span>&gt;</span><br><span class="line">    &gt;:HAVE_5_OR_LATER&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>同样，使用名称选择良好的辅助变量来构建可读的表达式:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(is_gnu <span class="string">&quot;$&lt;CXX_COMPILER_ID:GNU&gt;&quot;</span>)</span><br><span class="line"><span class="keyword">set</span>(v5_or_later <span class="string">&quot;$&lt;VERSION_GREATER_EQUAL:$&lt;CXX_COMPILER_VERSION&gt;,5&gt;&quot;</span>)</span><br><span class="line"><span class="keyword">set</span>(meet_requirements <span class="string">&quot;$&lt;AND:$&#123;is_gnu&#125;,$&#123;v5_or_later&#125;&gt;&quot;</span>)</span><br><span class="line"><span class="keyword">target_compile_definitions</span>(tgt PRIVATE</span><br><span class="line">  <span class="string">&quot;$&lt;$&#123;meet_requirements&#125;:HAVE_5_OR_LATER&gt;&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>由于生成器表达式是在生成构建系统时计算的，而不是在处理CMakeLists.txt文件时计算的，因此不可能使用message()命令检查它们的结果。生成调试消息的一种可能的方法是添加一个自定义目标:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_custom_target</span>(genexdebug <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_COMMAND&#125;</span> -E echo <span class="string">&quot;$&lt;...&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>运行cmake之后，您可以构建genexdebug目标以打印$&lt;…&gt;表达式(即执行命令cmake——build…——目标genexdebug)。</p>
+<p>另一种方法是使用file(GENERATE)将调试消息写入文件:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GENERATE OUTPUT filename CONTENT <span class="string">&quot;$&lt;...&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="生成器表达式参考"><a href="#生成器表达式参考" class="headerlink" title="生成器表达式参考"></a>生成器表达式参考</h3><p>请注意 这个引用偏离了大多数CMake文档，因为它省略了尖括号&lt;…&gt;围绕占位符，如条件，字符串，目标等。这是为了防止那些占位符被错误地解释为生成器表达式。</p>
+<h3 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h3><p>生成器表达式的一个基本类别与条件逻辑有关。支持两种形式的条件生成器表达式:</p>
+<p>$&lt;condition:true_string&gt;<br>如果condition为1，则返回true_string;如果condition为0，则返回空字符串。condition的任何其他值都会导致错误。</p>
+<p>$&lt;IF:condition,true_string,false_string&gt;<br>3.8新版功能。</p>
+<p>如果condition为1，则返回true_string;如果condition为0，则返回false_string。condition的任何其他值都会导致错误。</p>
+<p>通常，条件本身就是一个生成器表达式。例如，当使用Debug配置时，下面的表达式展开为DEBUG_MODE，对于所有其他配置则为空字符串:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&lt;$&lt;CONFIG:Debug&gt;:DEBUG_MODE&gt;</span><br></pre></td></tr></table></figure>
+<p>除1或0之外的类似布尔的条件值可以用$<a href="BOOL:...">BOOL:...</a>生成器表达式:</p>
+<p>$&lt;BOOL:string&gt;<br>将字符串转换为0或1。如果下列任意一个为真，则计算结果为0:</p>
+<p>字符串为空，</p>
+<p>string不区分大小写，等于0,FALSE, OFF, N, NO, IGNORE, NOTFOUND，或</p>
+<p>字符串以后缀-NOTFOUND结尾(区分大小写)。</p>
+<p>否则求值为1。</p>
+<p>当CMake变量提供条件时，通常使用$&lt;BOOL:……&gt;生成器表达式:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&lt;$&lt;BOOL:<span class="variable">$&#123;HAVE_SOME_FEATURE&#125;</span>&gt;:-DENABLE_SOME_FEATURE&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>支持常见的布尔逻辑运算符:</p>
+<p>$&lt;AND:conditions&gt;<br>其中conditions是一个以逗号分隔的布尔表达式列表，所有这些表达式的值必须为1或0。如果所有条件都为1，则整个表达式的值为1。如果任何条件为0，整个表达式的计算结果为0。</p>
+<p>$&lt;OR:conditions&gt;<br>其中conditions是逗号分隔的布尔表达式列表。所有这些都必须等于1或0。如果至少有一个条件为1，则整个表达式的值为1。如果所有条件的值为0，则整个表达式的值为0。</p>
+<p>$&lt;NOT:condition&gt;<br>Condition必须为0或1。如果condition为1，表达式的结果为0，否则为1。</p>
+<h3 id="主要比较表达式"><a href="#主要比较表达式" class="headerlink" title="主要比较表达式"></a>主要比较表达式</h3><p>CMake支持各种生成器表达式进行比较。本节将介绍主要的和最广泛使用的比较类型。其他更具体的比较类型将在后面单独的部分中进行说明。</p>
+<h3 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h3><p>$&lt;STREQUAL:string1,string2&gt;  </p>
+<p>如果string1和string2相等，则为1，否则为0。比较是区分大小写的。要进行不区分大小写的比较，请与字符串转换生成器表达式结合使用。例如，如果${foo}是BAR, BAR, BAR等中的任意一个，则下面的计算结果为1。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&lt;<span class="keyword">STREQUAL</span>:$&lt;UPPER_CASE:<span class="variable">$&#123;foo&#125;</span>&gt;,BAR&gt;</span><br></pre></td></tr></table></figure>
+
+<p>$&lt;EQUAL:value1,value2&gt;<br>如果value1和value2数值相等，则为1，否则为0。</p>
+<h3 id="版本比较"><a href="#版本比较" class="headerlink" title="版本比较"></a>版本比较</h3><p>$&lt;VERSION_LESS:v1,v2&gt;<br>如果v1小于v2，则为1，否则为0。</p>
+<p>$&lt;VERSION_GREATER:v1,v2&gt;<br>如果v1的版本大于v2，则为1，否则为0。</p>
+<p>$&lt;VERSION_EQUAL:v1,v2&gt;<br>如果v1和v2的版本相同，则为1，否则为0。</p>
+<p>$&lt;VERSION_LESS_EQUAL:v1,v2&gt;<br>3.7新版功能。</p>
+<p>如果v1小于或等于v2，则为1，否则为0。</p>
+<p>$&lt;VERSION_GREATER_EQUAL:v1,v2&gt;<br>3.7新版功能。</p>
+<p>如果v1是大于或等于v2的版本，则为1，否则为0。</p>
+<h3 id="字符串转换"><a href="#字符串转换" class="headerlink" title="字符串转换"></a>字符串转换</h3><p>$&lt;LOWER_CASE:string&gt;<br>转换为小写的字符串内容。</p>
+<p>$&lt;UPPER_CASE:string&gt;<br>转换为大写的字符串内容。</p>
+<p>$&lt;MAKE_C_IDENTIFIER:…&gt;<br>的内容……转换为C标识符。转换遵循与string(MAKE_C_IDENTIFIER)相同的行为。</p>
+<h3 id="表达式列表"><a href="#表达式列表" class="headerlink" title="表达式列表"></a>表达式列表</h3><p>$&lt;IN_LIST:string,list&gt;<br>3.12新版功能。</p>
+<p>如果string是分号分隔列表中的项，则为1，否则为0。它使用区分大小写的比较。</p>
+<p>$&lt;JOIN:list,string&gt;<br>用插入在每个项之间的字符串内容连接列表。</p>
+<p>$&lt;REMOVE_DUPLICATES:list&gt;<br>3.15新版功能。</p>
+<p>删除给定列表中的重复项。保留项的相对顺序，但如果遇到重复项，则只保留第一个实例。</p>
+<p>$&lt;FILTER:list,INCLUDE|EXCLUDE,regex&gt;<br>3.15新版功能。</p>
+<p>从列表中包含或删除与正则表达式regex匹配的项。</p>
+<h3 id="路径表达式"><a href="#路径表达式" class="headerlink" title="路径表达式"></a>路径表达式</h3><p>本节中的大多数表达式都与cmake_path()命令密切相关，提供相同的功能，但是是以生成器表达式的形式。</p>
+<p>对于本节中的所有生成器表达式，路径都应该是cmake样式的格式。$&lt;PATH:CMAKE_PATH&gt;生成器表达式可用于将本机路径转换为cmake样式的路径。</p>
+<h3 id="路径的比较"><a href="#路径的比较" class="headerlink" title="路径的比较"></a>路径的比较</h3><p>$&lt;PATH_EQUAL:path1,path2&gt;<br>3.24新版功能。</p>
+<p>比较两个路径的词法表示。在任何路径上都不执行归一化。如果路径相等则返回1，否则返回0。</p>
+<p>有关更多细节，请参阅cmake_path(COMPARE)。</p>
+<h3 id="路径查询"><a href="#路径查询" class="headerlink" title="路径查询"></a>路径查询</h3><p>这些表达式提供了等同于cmake_path()命令的Query选项的生成时功能。所有路径都应该是cmake样式的格式。</p>
+<p>$&lt;PATH:HAS_*,path&gt;<br>3.24新版功能。</p>
+<p>如果存在特定的路径组件，则返回1，否则返回0。有关每个路径组件的含义，请参阅路径结构和术语。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$&lt;PATH:HAS_ROOT_NAME,path&gt;</span><br><span class="line">$&lt;PATH:HAS_ROOT_DIRECTORY,path&gt;</span><br><span class="line">$&lt;PATH:HAS_ROOT_PATH,path&gt;</span><br><span class="line">$&lt;PATH:HAS_FILENAME,path&gt;</span><br><span class="line">$&lt;PATH:HAS_EXTENSION,path&gt;</span><br><span class="line">$&lt;PATH:HAS_STEM,path&gt;</span><br><span class="line">$&lt;PATH:HAS_RELATIVE_PART,path&gt;</span><br><span class="line">$&lt;PATH:HAS_PARENT_PATH,path&gt;</span><br></pre></td></tr></table></figure>
+<p>注意以下特殊情况:</p>
+<p>对于HAS_ROOT_PATH，只有当根名称或根目录中至少有一个非空时，才会返回true结果。</p>
+<p>对于HAS_PARENT_PATH，根目录也被认为有一个父目录，即它本身。除非路径仅由文件名组成，否则结果为真。</p>
+<p>$&lt;PATH:IS_ABSOLUTE,path&gt;<br>3.24新版功能。</p>
+<p>如果路径是绝对路径则返回1，否则返回0。</p>
+<p>$&lt;PATH:IS_RELATIVE,path&gt;<br>3.24新版功能。</p>
+<p>这将返回与IS_ABSOLUTE相反的结果。</p>
+<p>$&lt;PATH:IS_PREFIX[,NORMALIZE],path,input&gt;<br>3.24新版功能。</p>
+<p>如果path是输入的前缀，则返回1，否则返回0。</p>
+<p>当指定NORMALIZE选项时，路径和输入在检查之前被标准化。</p>
+<h3 id="路径分解"><a href="#路径分解" class="headerlink" title="路径分解"></a>路径分解</h3><p>这些表达式提供了等同于cmake_path()命令的分解选项的生成时功能。所有路径都应该是cmake样式的格式。</p>
+<p>$&lt;PATH:GET_*,…&gt;<br>3.24新版功能。</p>
+<p>以下操作从路径中检索不同的组件或组件组。有关每个路径组件的含义，请参阅路径结构和术语。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$&lt;PATH:GET_ROOT_NAME,path&gt;</span><br><span class="line">$&lt;PATH:GET_ROOT_DIRECTORY,path&gt;</span><br><span class="line">$&lt;PATH:GET_ROOT_PATH,path&gt;</span><br><span class="line">$&lt;PATH:GET_FILENAME,path&gt;</span><br><span class="line">$&lt;PATH:GET_EXTENSION[,LAST_ONLY],path&gt;</span><br><span class="line">$&lt;PATH:GET_STEM[,LAST_ONLY],path&gt;</span><br><span class="line">$&lt;PATH:GET_RELATIVE_PART,path&gt;</span><br><span class="line">$&lt;PATH:GET_PARENT_PATH,path&gt;</span><br></pre></td></tr></table></figure>
+<p>如果请求的组件不在路径中，则返回空字符串。</p>
+<h3 id="路径转换"><a href="#路径转换" class="headerlink" title="路径转换"></a>路径转换</h3><p>这些表达式提供了等同于cmake_path()命令的modify和Generation选项的生成时功能。所有路径都应该是cmake样式的格式。</p>
+<p>$&lt;PATH:CMAKE_PATH[,NORMALIZE],path&gt;<br>3.24新版功能。</p>
+<p>返回路径。如果path是原生路径，它将转换为带有正斜杠(&#x2F;)的cmake样式的路径。在Windows上，长文件名标记会被考虑在内。</p>
+<p>当指定NORMALIZE选项时，转换后将对路径进行规范化。</p>
+<p>$&lt;PATH:APPEND,path,input,…&gt;<br>3.24新版功能。</p>
+<p>返回以&#x2F;作为目录分隔符附加到path的所有输入参数。根据输入的不同，path的值可能会被丢弃。</p>
+<p>请参阅cmake_path(APPEND)了解更多详细信息。</p>
+<p>$&lt;PATH:REMOVE_FILENAME,path&gt;<br>3.24新版功能。</p>
+<p>返回删除了文件名组件(由$&lt; path:GET_FILENAME&gt;返回)的路径。删除之后，任何尾随的目录分隔符(如果存在的话)都将保持不变。</p>
+<p>参见cmake_path(REMOVE_FILENAME)了解更多细节。</p>
+<p>$&lt;PATH:REPLACE_FILENAME,path,input&gt;<br>3.24新版功能。</p>
+<p>返回路径，其中filename组件被输入替换。如果path没有文件名组件(例如$&lt; path:HAS_FILENAME&gt;返回0)，path不变。</p>
+<p>参见cmake_path(REPLACE_FILENAME)了解更多细节。</p>
+<p>$&lt;PATH:REMOVE_EXTENSION[,LAST_ONLY],path&gt;<br>3.24新版功能。</p>
+<p>返回已删除扩展名的路径(如果有)。</p>
+<p>有关详细信息，请参阅cmake_path(REMOVE_EXTENSION)。</p>
+<p>$&lt;PATH:REPLACE_EXTENSION[,LAST_ONLY],path,input&gt;<br>3.24新版功能。</p>
+<p>返回路径，其中扩展名替换为输入(如果有的话)。</p>
+<p>详细信息请参见cmake_path(REPLACE_EXTENSION)。</p>
+<p>$&lt;PATH:NORMAL_PATH,path&gt;<br>3.24新版功能。</p>
+<p>返回根据归一化中描述的步骤归一化的路径。</p>
+<p>$&lt;PATH:RELATIVE_PATH,path,base_directory&gt;<br>3.24新版功能。</p>
+<p>返回路径，修改后使其相对于base_directory参数。</p>
+<p>有关更多细节，请参阅cmake_path(RELATIVE_PATH)。</p>
+<p>$&lt;PATH:ABSOLUTE_PATH[,NORMALIZE],path,base_directory&gt;<br>3.24新版功能。</p>
+<p>返回绝对路径。如果path是一个相对路径($&lt; path:IS_RELATIVE&gt;返回1)，它将相对于base_directory参数指定的给定基目录进行计算。</p>
+<p>当指定NORMALIZE选项时，在路径计算之后对路径进行规范化。</p>
+<p>有关详细信息，请参阅cmake_path(ABSOLUTE_PATH)。</p>
+<h3 id="shell-path"><a href="#shell-path" class="headerlink" title="shell path"></a>shell path</h3><p>$&lt;SHELL_PATH:…&gt;<br>3.4新版功能。</p>
+<p>的内容……转换为shell路径样式。例如，Windows shell中将斜杠转换为反斜杠，MSYS shell将盘符转换为posix路径。…必须为绝对路径。</p>
+<p>3.14新版功能:The…可以是一个以分号分隔的路径列表，在这种情况下，每个路径都被单独转换，并且使用shell路径分隔符(:在POSIX和;在Windows上)。在CMake源代码中，请务必将包含此genex的参数括在双引号中，以便;不分裂争论。</p>
+<h3 id="配置表达式"><a href="#配置表达式" class="headerlink" title="配置表达式"></a>配置表达式</h3><p>$&lt;CONFIG&gt;<br>配置名称。使用此表达式代替已弃用的CONFIGURATION生成器表达式。</p>
+<p>$&lt;CONFIG:cfgs&gt;<br>如果config是逗号分隔的列表cfgs中的任何一项，则为1，否则为0。这是一个不区分大小写的比较。当在导入目标的属性上计算map_importted_config_ 中的映射时，此表达式也会考虑它。</p>
+<p>在3.19版更改:可以为cfgs指定多个配置。CMake 3.18和更早的版本只接受单一配置。</p>
+<p>$&lt;OUTPUT_CONFIG:…&gt;<br>3.20新版功能。</p>
+<p>仅在add_custom_command()和add_custom_target()中作为参数中的最外层生成器表达式有效。与忍者多配置生成器，生成器表达式在…使用自定义命令的“输出配置”进行计算。使用其他生成器，…正常计算。</p>
+<p>$&lt;COMMAND_CONFIG:…&gt;<br>3.20新版功能。</p>
+<p>仅在add_custom_command()和add_custom_target()中作为参数中的最外层生成器表达式有效。与忍者多配置生成器，生成器表达式在…使用自定义命令的“命令配置”进行计算。使用其他生成器，…正常计算。</p>
+<h3 id="工具链和语言表达"><a href="#工具链和语言表达" class="headerlink" title="工具链和语言表达"></a>工具链和语言表达</h3><h3 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h3><p>$<PLATFORM_ID><br>当前系统的CMake平台id。另请参阅CMAKE_SYSTEM_NAME变量。</p>
+<p>$&lt;PLATFORM_ID:platform_ids&gt;<br>如果CMake的平台id与逗号分隔的platform_ids列表中的任何一个项匹配，则为1，否则为0。另请参阅CMAKE_SYSTEM_NAME变量。</p>
+<h3 id="编译器版本"><a href="#编译器版本" class="headerlink" title="编译器版本"></a>编译器版本</h3><p>另请参阅CMAKE_ _COMPILER_VERSION变量，该变量与本小节中的表达式密切相关。</p>
+<p>$<C_COMPILER_VERSION><br>使用的C编译器版本。</p>
+<p>$&lt;C_COMPILER_VERSION:version&gt;<br>如果C编译器的版本与version匹配，则为1，否则为0。</p>
+<p>$<CXX_COMPILER_VERSION><br>使用的CXX编译器的版本。</p>
+<p>$&lt;CXX_COMPILER_VERSION:version&gt;<br>如果CXX编译器的版本与version匹配，则为1，否则为0。</p>
+<p>$<CUDA_COMPILER_VERSION><br>3.15新版功能。</p>
+<p>使用的CUDA编译器的版本。</p>
+<p>$&lt;CUDA_COMPILER_VERSION:version&gt;<br>3.15新版功能。</p>
+<p>如果CXX编译器的版本与version匹配，则为1，否则为0。</p>
+<p>$<OBJC_COMPILER_VERSION><br>3.16新版功能。</p>
+<p>使用的OBJC编译器的版本。</p>
+<p>$&lt;OBJC_COMPILER_VERSION:version&gt;<br>3.16新版功能。</p>
+<p>如果OBJC编译器的版本与version匹配，则为1，否则为0。</p>
+<p>$<OBJCXX_COMPILER_VERSION><br>3.16新版功能。</p>
+<p>使用的OBJCXX编译器的版本。</p>
+<p>$&lt;OBJCXX_COMPILER_VERSION:version&gt;<br>3.16新版功能。</p>
+<p>如果OBJCXX编译器的版本与version匹配，则返回1，否则返回0。</p>
+<p>$<Fortran_COMPILER_VERSION><br>使用的Fortran编译器版本。</p>
+<p>$&lt;Fortran_COMPILER_VERSION:version&gt;<br>如果Fortran编译器的版本与version匹配，则为1，否则为0。</p>
+<p>$<HIP_COMPILER_VERSION><br>3.21新版功能。</p>
+<p>使用的HIP编译器的版本。</p>
+<p>$&lt;HIP_COMPILER_VERSION:version&gt;<br>3.21新版功能。</p>
+<p>如果HIP编译器的版本与version匹配，则为1，否则为0。</p>
+<p>$<ISPC_COMPILER_VERSION><br>3.19新版功能。</p>
+<p>使用的ISPC编译器的版本。</p>
+<p>$&lt;ISPC_COMPILER_VERSION:version&gt;<br>3.19新版功能。</p>
+<p>如果ISPC编译器的版本与version匹配，则为1，否则为0。</p>
+<h3 id="编译语言和ID"><a href="#编译语言和ID" class="headerlink" title="编译语言和ID"></a>编译语言和ID</h3><p>另请参阅CMAKE_ _COMPILER_ID变量，该变量与本小节中的大多数表达式密切相关。</p>
+<p>$<C_COMPILER_ID><br>使用的C编译器的CMake的编译器id。</p>
+<p>$&lt;C_COMPILER_ID:compiler_ids&gt;<br>其中compiler_ids是一个逗号分隔的列表。如果CMake的C编译器的编译器id与compiler_ids中的任何一个条目匹配，则返回1，否则为0。</p>
+<p>$<CXX_COMPILER_ID><br>所使用的CXX编译器的CMake编译器id。</p>
+<p>$&lt;CXX_COMPILER_ID:compiler_ids&gt;<br>其中compiler_ids是一个逗号分隔的列表。如果CXX编译器的CMake的编译器id与compiler_ids中的任何一个条目匹配，则返回1，否则为0。</p>
+<p>$<CUDA_COMPILER_ID><br>3.15新版功能。</p>
+<p>使用的CUDA编译器的CMake的编译器id。</p>
+<p>$&lt;CUDA_COMPILER_ID:compiler_ids&gt;<br>3.15新版功能。</p>
+<p>其中compiler_ids是一个逗号分隔的列表。如果CMake的CUDA编译器的编译器id与compiler_ids中的任何一个条目匹配，则为1，否则为0。</p>
+<p>$<OBJC_COMPILER_ID><br>3.16新版功能。</p>
+<p>使用的OBJC编译器的CMake的编译器id。</p>
+<p>$&lt;OBJC_COMPILER_ID:compiler_ids&gt;<br>3.16新版功能。</p>
+<p>其中compiler_ids是一个逗号分隔的列表。如果Objective-C编译器的CMake的编译器id与compiler_ids中的任何一个条目匹配，则返回1，否则为0。</p>
+<p>$<OBJCXX_COMPILER_ID><br>3.16新版功能。</p>
+<p>使用的OBJCXX编译器的CMake的编译器id。</p>
+<p>$&lt;OBJCXX_COMPILER_ID:compiler_ids&gt;<br>3.16新版功能。</p>
+<p>其中compiler_ids是一个逗号分隔的列表。如果CMake的objective - c++编译器的编译器id与compiler_ids中的任何一个条目匹配，则返回1，否则为0。</p>
+<p>$<Fortran_COMPILER_ID><br>使用的Fortran编译器的CMake的编译器id。</p>
+<p>$&lt;Fortran_COMPILER_ID:compiler_ids&gt;<br>其中compiler_ids是一个逗号分隔的列表。如果CMake的Fortran编译器的编译器id与compiler_ids中的任何一个条目匹配，则为1，否则为0。</p>
+<p>$<HIP_COMPILER_ID><br>3.21新版功能。</p>
+<p>使用的HIP编译器的CMake的编译器id。</p>
+<p>$&lt;HIP_COMPILER_ID:compiler_ids&gt;<br>3.21新版功能。</p>
+<p>其中compiler_ids是一个逗号分隔的列表。如果CMake的HIP编译器的编译器id与compiler_ids中的任何一个条目匹配，则返回1，否则为0。</p>
+<p>$<ISPC_COMPILER_ID><br>3.19新版功能。</p>
+<p>使用的ISPC编译器的CMake的编译器id。</p>
+<p>$&lt;ISPC_COMPILER_ID:compiler_ids&gt;<br>3.19新版功能。</p>
+<p>其中compiler_ids是一个逗号分隔的列表。如果CMake的ISPC编译器的编译器id与compiler_ids中的任何一个条目匹配，则为1，否则为0。</p>
+<p>$<COMPILE_LANGUAGE><br>3.3新版功能。</p>
+<p>计算编译选项时源文件的编译语言。关于这个生成器表达式的可移植性，请参阅相关的布尔表达式$ 。</p>
+<p>$&lt;COMPILE_LANGUAGE:languages&gt;<br>3.3新版功能。</p>
+<p>在3.15版更改:可以为语言指定多种语言。CMake 3.14及更早版本只接受单一语言。</p>
+<p>当用于编译单元的语言与语言中任何以逗号分隔的条目匹配时，则为1，否则为0。此表达式可用于指定编译选项、编译定义，并在目标中包含特定语言的源文件的目录。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(myapp main.cpp foo.c bar.cpp zot.cu)</span><br><span class="line"><span class="keyword">target_compile_options</span>(myapp</span><br><span class="line">  PRIVATE $&lt;$&lt;COMPILE_LANGUAGE:CXX&gt;:-fno-exceptions&gt;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">target_compile_definitions</span>(myapp</span><br><span class="line">  PRIVATE $&lt;$&lt;COMPILE_LANGUAGE:CXX&gt;:COMPILING_CXX&gt;</span><br><span class="line">          $&lt;$&lt;COMPILE_LANGUAGE:CUDA&gt;:COMPILING_CUDA&gt;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">target_include_directories</span>(myapp</span><br><span class="line">  PRIVATE $&lt;$&lt;COMPILE_LANGUAGE:CXX,CUDA&gt;:/opt/foo/headers&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这指定了使用-fno-exceptions编译选项、COMPILING_CXX编译定义和cxx_headers include目录仅用于c++(编译器id检查省略)。它还为CUDA指定了COMPILING_CUDA编译定义。</p>
+<p>注意，在Visual Studio Generators和Xcode中，没有办法表示目标范围的编译定义，也没有办法分别包含C和CXX语言的目录。而且，使用Visual Studio Generators，无法分别为C语言和CXX语言表示目标范围的标志。在这些生成器下，C和c++源的表达式如果有任何c++源，将使用CXX求值，否则使用C求值。一个解决方法是为每种源文件语言创建单独的库:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(myapp_c foo.c)</span><br><span class="line"><span class="keyword">add_library</span>(myapp_cxx bar.cpp)</span><br><span class="line"><span class="keyword">target_compile_options</span>(myapp_cxx PUBLIC -fno-exceptions)</span><br><span class="line"><span class="keyword">add_executable</span>(myapp main.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp myapp_c myapp_cxx)</span><br></pre></td></tr></table></figure>
+<p>$&lt;COMPILE_LANG_AND_ID:language,compiler_ids&gt;<br>3.15新版功能。</p>
+<p>当编译单元使用的语言与language匹配，且语言编译器的CMake的编译器id与compiler_ids中任何一个以逗号分隔的条目匹配时，则为1，否则为0。这个表达式是$ 和$ 组合的简写形式。此表达式可用于指定编译选项、编译定义，并在目标中包含特定语言的源文件和编译器组合的目录。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(myapp main.cpp foo.c bar.cpp zot.cu)</span><br><span class="line"><span class="keyword">target_compile_definitions</span>(myapp</span><br><span class="line">  PRIVATE $&lt;$&lt;COMPILE_LANG_AND_ID:CXX,AppleClang,Clang&gt;:COMPILING_CXX_WITH_CLANG&gt;</span><br><span class="line">          $&lt;$&lt;COMPILE_LANG_AND_ID:CXX,Intel&gt;:COMPILING_CXX_WITH_INTEL&gt;</span><br><span class="line">          $&lt;$&lt;COMPILE_LANG_AND_ID:C,Clang&gt;:COMPILING_C_WITH_CLANG&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这指定了基于编译器id和编译语言的不同编译定义的使用。当Clang是CXX编译器时，这个例子将有一个COMPILING_CXX_WITH_CLANG编译定义，当Intel是CXX编译器时，这个例子将有一个COMPILING_CXX_WITH_INTEL编译定义。同样，当C编译器是Clang时，它只能看到COMPILING_C_WITH_CLANG定义。</p>
+<p>如果没有COMPILE_LANG_AND_ID生成器表达式，相同的逻辑将表示为:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_compile_definitions</span>(myapp</span><br><span class="line">  PRIVATE $&lt;$&lt;<span class="keyword">AND</span>:$&lt;COMPILE_LANGUAGE:CXX&gt;,$&lt;CXX_COMPILER_ID:AppleClang,Clang&gt;&gt;:COMPILING_CXX_WITH_CLANG&gt;</span><br><span class="line">          $&lt;$&lt;<span class="keyword">AND</span>:$&lt;COMPILE_LANGUAGE:CXX&gt;,$&lt;CXX_COMPILER_ID:Intel&gt;&gt;:COMPILING_CXX_WITH_INTEL&gt;</span><br><span class="line">          $&lt;$&lt;<span class="keyword">AND</span>:$&lt;COMPILE_LANGUAGE:C&gt;,$&lt;C_COMPILER_ID:Clang&gt;&gt;:COMPILING_C_WITH_CLANG&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="编译功能"><a href="#编译功能" class="headerlink" title="编译功能"></a>编译功能</h3><p>$&lt;COMPILE_FEATURES:features&gt;<br>3.1新版功能。</p>
+<p>其中features是一个逗号分隔的列表。如果’head’目标的所有特征都可用，则返回1，否则返回0。如果在计算目标的链接实现时使用此表达式，并且如果任何依赖项传递性地增加了’head’目标所需的C_STANDARD或CXX_STANDARD，则会报告错误。有关编译特性的信息和支持的编译器列表，请参阅cmake-compile-features(7)手册。</p>
+<h3 id="link语言和ID"><a href="#link语言和ID" class="headerlink" title="link语言和ID"></a>link语言和ID</h3><p>$<LINK_LANGUAGE><br>3.18新版功能。</p>
+<p>计算链接选项时，目标的链接语言。请参阅相关的布尔表达式$ ，以了解该生成器表达式的可移植性。</p>
+<p>请注意 链接库属性不支持此生成器表达式，以避免由于这些属性的双重求值而产生的副作用。</p>
+<p>$&lt;LINK_LANGUAGE:languages&gt;<br>3.18新版功能。</p>
+<p>当用于链接步骤的语言匹配语言中任何以逗号分隔的条目时，则为1，否则为0。此表达式可用于指定目标中特定语言的链接库、链接选项、链接目录和链接依赖项。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(api_C ...)</span><br><span class="line"><span class="keyword">add_library</span>(api_CXX ...)</span><br><span class="line"><span class="keyword">add_library</span>(api INTERFACE)</span><br><span class="line"><span class="keyword">target_link_options</span>(api   INTERFACE $&lt;$&lt;LINK_LANGUAGE:C&gt;:-opt_c&gt;</span><br><span class="line">                                    $&lt;$&lt;LINK_LANGUAGE:CXX&gt;:-opt_cxx&gt;)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(api INTERFACE $&lt;$&lt;LINK_LANGUAGE:C&gt;:api_C&gt;</span><br><span class="line">                                    $&lt;$&lt;LINK_LANGUAGE:CXX&gt;:api_CXX&gt;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(myapp1 main.c)</span><br><span class="line"><span class="keyword">target_link_options</span>(myapp1 PRIVATE api)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(myapp2 main.cpp)</span><br><span class="line"><span class="keyword">target_link_options</span>(myapp2 PRIVATE api)</span><br></pre></td></tr></table></figure>
+<p>这指定使用api目标来链接目标myapp1和myapp2。实际上，myapp1将与目标api_C和选项-opt_c进行链接，因为它将使用C作为链接语言。myapp2将使用api_CXX和option -opt_cxx链接，因为CXX将是链接语言。</p>
+<p>请注意 为了确定目标的链接语言，需要传递地收集将链接到它的所有目标。因此，对于链接库属性，将进行双重计算。在第一次求值期间，$&lt;LINK_LANGUAGE:..&gt; </p>
+<p>表达式总是返回0。在第一次传递之后计算的链接语言将用于第二次传递。为了避免不一致，要求第二次传递不改变链接语言。此外，为了避免意外的副作用，需要指定完整的实体作为$ 表达式。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(lib STATIC <span class="keyword">file</span>.cxx)</span><br><span class="line"><span class="keyword">add_library</span>(libother STATIC <span class="keyword">file</span>.c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bad usage</span></span><br><span class="line"><span class="keyword">add_executable</span>(myapp1 main.c)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp1 PRIVATE lib$&lt;$&lt;LINK_LANGUAGE:C&gt;:other&gt;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># correct usage</span></span><br><span class="line"><span class="keyword">add_executable</span>(myapp2 main.c)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp2 PRIVATE $&lt;$&lt;LINK_LANGUAGE:C&gt;:libother&gt;)</span><br></pre></td></tr></table></figure>
+<p>在本例中，对于myapp1，第一次传递将意外地确定链接语言是CXX，因为生成器表达式的计算将是一个空字符串，因此myapp1将依赖于c++的目标库。相反，对于myapp2，第一次评估将给出C作为链接语言，因此第二次评估将正确地添加目标libother作为链接依赖项。</p>
+<p>$&lt;LINK_LANG_AND_ID:language,compiler_ids&gt;<br>3.18新版功能。</p>
+<p>当用于链接步骤的语言匹配language并且语言链接器的CMake编译器id匹配compiler_ids中任何一个逗号分隔的条目时，则为1，否则为0。该表达式是$ 和$ 组合的简写形式。此表达式可用于指定目标中特定语言和链接器组合的链接库、链接选项、链接目录和链接依赖项。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(libC_Clang ...)</span><br><span class="line"><span class="keyword">add_library</span>(libCXX_Clang ...)</span><br><span class="line"><span class="keyword">add_library</span>(libC_Intel ...)</span><br><span class="line"><span class="keyword">add_library</span>(libCXX_Intel ...)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(myapp main.c)</span><br><span class="line"><span class="keyword">if</span> (CXX_CONFIG)</span><br><span class="line">  <span class="keyword">target_sources</span>(myapp PRIVATE <span class="keyword">file</span>.cxx)</span><br><span class="line"><span class="keyword">endif</span>()</span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp</span><br><span class="line">  PRIVATE $&lt;$&lt;LINK_LANG_AND_ID:CXX,Clang,AppleClang&gt;:libCXX_Clang&gt;</span><br><span class="line">          $&lt;$&lt;LINK_LANG_AND_ID:C,Clang,AppleClang&gt;:libC_Clang&gt;</span><br><span class="line">          $&lt;$&lt;LINK_LANG_AND_ID:CXX,Intel&gt;:libCXX_Intel&gt;</span><br><span class="line">          $&lt;$&lt;LINK_LANG_AND_ID:C,Intel&gt;:libC_Intel&gt;)</span><br></pre></td></tr></table></figure>
+<p>这指定了基于编译器id和链接语言的不同链接库的使用。当Clang或AppleClang是CXX链接器时，这个例子将把目标libCXX_Clang作为链接依赖项，当Intel是CXX链接器时，将把目标libCXX_Intel作为链接依赖项。同样地，当C链接器是Clang或AppleClang时，目标libC_Clang将被添加为链接依赖项，当Intel是C链接器时，目标libC_Intel将被添加为链接依赖项。</p>
+<p>有关使用此生成器表达式的约束，请参阅与$ 相关的说明。</p>
+<h3 id="链接功能"><a href="#链接功能" class="headerlink" title="链接功能"></a>链接功能</h3><p>$&lt;LINK_LIBRARY:feature,library-list&gt;<br>3.24新版功能。</p>
+<p>指定一组要链接到目标的库，以及提供关于应该如何链接它们的详细信息的特性。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(lib1 STATIC ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib2 ...)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib2 PRIVATE <span class="string">&quot;$&lt;LINK_LIBRARY:WHOLE_ARCHIVE,lib1&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>这指定lib2应该链接到lib1，并在这样做时使用WHOLE_ARCHIVE特性。</p>
+<p>特性名称区分大小写，只能包含字母、数字和下划线。所有大写的特性名称都保留给CMake自己的内置特性。预定义的内置库特性包括:</p>
+<p>默认的<br>这个特性对应于标准链接，本质上等同于不使用任何特性。它通常只与LINK_LIBRARY_OVERRIDE和link_library_overrides 目标属性一起使用。</p>
+<p>WHOLE_ARCHIVE<br>强制包含静态库的所有成员。此功能仅支持以下平台，其局限性如下所示:</p>
+<p>Linux。</p>
+<p>所有BSD变体。</p>
+<p>SunOS。</p>
+<p>所有苹果的变种。库必须指定为CMake目标名称、库文件名(如libfoo.a)或库文件路径(如&#x2F;path&#x2F;to&#x2F;libfoo.a)。由于Apple链接器的限制，它不能被指定为普通的库名，比如foo，其中foo不是CMake目标。</p>
+<p>窗户当使用MSVC或类似MSVC的工具链时，MSVC版本必须大于1900。</p>
+<p>Cygwin。</p>
+<p>MSYS。</p>
+<p>框架<br>该选项告诉链接器使用-framework linker选项搜索指定的框架。它只能在苹果平台上使用，并且只能使用一个理解所使用选项的链接器(即Xcode提供的链接器，或与之兼容的链接器)。</p>
+<p>该框架可以指定为CMake框架目标、裸框架名称或文件路径。如果给出了一个目标，该目标必须将FRAMEWORK target属性设置为true。对于文件路径，如果它包含目录部分，则该目录将被添加为框架搜索路径。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(lib SHARED ...)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib PRIVATE <span class="string">&quot;$&lt;LINK_LIBRARY:FRAMEWORK,/path/to/my_framework&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The constructed linker command line will contain:</span></span><br><span class="line"><span class="comment">#   -F/path/to -framework my_framework</span></span><br></pre></td></tr></table></figure>
+<p>文件路径必须符合以下模式之一(*为通配符，可选部分显示为[…]):</p>
+<p>[&#x2F;路径&#x2F; &#x2F;]FwName [.framework]</p>
+<p>[&#x2F;路径&#x2F; &#x2F;]FwName.framework &#x2F; FwName(后缀)</p>
+<p>[&#x2F;路径&#x2F; &#x2F;]FwName.framework &#x2F;版本&#x2F; * &#x2F; FwName(后缀)</p>
+<p>注意，CMake识别并自动处理框架目标，即使不使用$ 表达式。生成器表达式仍然可以与CMake目标一起使用，如果项目想显式地使用它，但并不要求这样做。链接器命令行在使用生成器表达式或不使用生成器表达式之间可能有一些差异，但最终结果应该是相同的。另一方面，如果给出了文件路径，CMake会自动识别一些路径，但不是所有情况。项目可能需要使用$ 的文件路径，以便预期的行为是明确的。</p>
+<p>3.25新版功能:框架特性现在支持FRAMEWORK_MULTI_CONFIG_POSTFIX_ 目标属性以及框架库名称的后缀。</p>
+<p>NEEDED_FRAMEWORK<br>这类似于框架特性，除了它强制链接器链接到框架，即使没有从框架中使用符号。它使用- neede_framework选项，并具有与FRAMEWORK相同的链接器约束。</p>
+<p>REEXPORT_FRAMEWORK<br>这类似于FRAMEWORK特性，除了它告诉链接器框架应该对链接到正在创建的库的客户端可用。它使用-reexport_framework选项，并具有与FRAMEWORK相同的链接器约束。</p>
+<p>WEAK_FRAMEWORK<br>这类似于FRAMEWORK特性，除了它强制链接器将框架及其所有引用标记为弱导入。它使用-weak_framework选项，并具有与FRAMEWORK相同的链接器约束。</p>
+<p>NEEDED_LIBRARY<br>这类似于NEEDED_FRAMEWORK特性，除了它用于非框架目标或库(仅限苹果平台)。它适当地使用- neede_library或-needed-l选项，并具有与neede_framework相同的链接器约束。</p>
+<p>REEXPORT_LIBRARY<br>这类似于REEXPORT_FRAMEWORK特性，除了它用于非框架目标或库(仅限苹果平台)。它适当地使用-reexport_library或-reexport-l选项，并具有与REEXPORT_FRAMEWORK相同的链接器约束。</p>
+<p>WEAK_LIBRARY<br>这类似于WEAK_FRAMEWORK特性，除了它用于非框架目标或库(仅限苹果平台)。它适当地使用-weak_library或-weak-l选项，并具有与WEAK_FRAMEWORK相同的链接器约束。</p>
+<p>内置和自定义库特性是根据以下变量定义的:</p>
+<p>CMAKE_&lt;LANG&gt;_LINK_LIBRARY_USING_&lt;FEATURE&gt;_SUPPORTED</p>
+<p>CMAKE_&lt;LANG&gt;_LINK_LIBRARY_USING_&lt;FEATURE&gt;</p>
+<p>CMAKE_LINK_LIBRARY_USING_&lt;FEATURE&gt;_SUPPORTED</p>
+<p>CMAKE_LINK_LIBRARY_USING_&lt;FEATURE&gt;<br>用于每个变量的值是在创建目标的目录作用域的末尾设置的值。用法如下:</p>
+<p>如果特定于语言的CMAKE_ <em>LINK_LIBRARY_USING</em> <em>SUPPORTED变量为真，则该特性必须由相应的CMAKE</em> <em>LINK_LIBRARY_USING</em> 变量定义。</p>
+<p>如果不支持特定于语言的特性，则CMAKE_LINK_LIBRARY_USING_&lt; feature &gt;_SUPPORTED变量必须为真，并且该特性必须由相应的CMAKE_LINK_LIBRARY_USING_&lt; feature &gt;变量定义。</p>
+<p>应注意以下限制:</p>
+<p>库列表可以指定CMake目标或库。任何OBJECT或INTERFACE类型的CMake目标都将忽略表达式的特征方面，而是以标准方式链接。</p>
+<p>$ &lt; LINK_LIBRARY:……&gt;<br>生成器表达式只能用于指定链接库。实际上，这意味着它可以出现在LINK_LIBRARIES、INTERFACE_LINK_LIBRARIES和INTERFACE_LINK_LIBRARIES_DIRECT目标属性中，并在target_link_libraries()和LINK_LIBRARIES()命令中指定。</p>
+<p>如果$&lt;LINK_LIBRARY:…&gt;生成器表达式出现在目标的INTERFACE_LINK_LIBRARIES属性中，它将包含在由安装(EXPORT)命令生成的导入目标中。使用此导入的环境负责定义此表达式使用的链接特性。</p>
+<p>链接步骤中涉及的每个目标或库最多只能有一种库特性。一个特性的缺失也与所有其他特性不兼容。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(lib1 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib2 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib3 ...)</span><br><span class="line"></span><br><span class="line"><span class="comment"># lib1 will be associated with feature1</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib2 PUBLIC <span class="string">&quot;$&lt;LINK_LIBRARY:feature1,lib1&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># lib1 is being linked with no feature here. This conflicts with the</span></span><br><span class="line"><span class="comment"># use of feature1 in the line above and would result in an error.</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib3 PRIVATE lib1 lib2)</span><br></pre></td></tr></table></figure>
+<p>如果不可能在整个构建过程中对给定的目标或库使用相同的特性，则可以使用LINK_LIBRARY_OVERRIDE和link_library_overrides &lt; library &gt;目标属性来解决此类不兼容性问题。</p>
+<p>$ &lt; LINK_LIBRARY:……&gt;<br>生成器表达式不保证指定目标和库的列表将保持分组在一起。要像GNU ld链接器所支持的那样管理——start-group和——end-group这样的构造，请使用LINK_GROUP生成器表达式。</p>
+<p>$&lt;LINK_GROUP:feature,library-list&gt;<br>3.24新版功能。</p>
+<p>指定要链接到目标的库组，以及定义该组应如何链接的特性。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(lib1 STATIC ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib2 ...)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib2 PRIVATE <span class="string">&quot;$&lt;LINK_GROUP:RESCAN,lib1,external&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>这指定lib2应该链接到lib1和外部库，并且根据RESCAN特性的定义，这两个库都应该包含在链接器命令行中。</p>
+<p>特性名称区分大小写，只能包含字母、数字和下划线。所有大写的特性名称都保留给CMake自己的内置特性。目前，只有一个预定义的内置组特性:</p>
+<p>重新扫描<br>有些链接器只能单次通过。对于这样的链接器，库之间的循环引用通常会导致无法解析的符号。该特性指示链接器重复搜索指定的静态库，直到没有新的未定义引用被创建为止。</p>
+<p>通常，静态库只按照在命令行中指定的顺序搜索一次。如果需要该库中的符号来解析稍后出现在命令行上的库中对象引用的未定义符号，则链接器将无法解析该引用。通过使用RESCAN特性对静态库进行分组，将重复搜索它们，直到解析所有可能的引用。这将使用链接器选项，如——start-group和——end-group，或者在SunOS上，-z rescan-start和-z rescan-end。</p>
+<p>使用这个特性会带来很大的性能成本。最好只在两个或多个静态库之间存在不可避免的循环引用时使用它。</p>
+<p>该特性在使用针对Linux、BSD和SunOS的工具链时可用。如果使用GNU工具链，它也可以用于Windows平台。</p>
+<p>内置和自定义组功能是根据以下变量定义的:</p>
+<p>CMAKE_&lt;LANG&gt;_LINK_GROUP_USING_&lt;FEATURE&gt;_SUPPORTED</p>
+<p>CMAKE_&lt;LANG&gt;_LINK_GROUP_USING_&lt;FEATURE&gt;</p>
+<p>CMAKE_LINK_GROUP_USING_&lt;FEATURE&gt;_SUPPORTED</p>
+<p>CMAKE_LINK_GROUP_USING_&lt;FEATURE&gt;<br>用于每个变量的值是在创建目标的目录作用域的末尾设置的值。用法如下:</p>
+<p>如果特定于语言的CMAKE_ <em>LINK_GROUP_USING</em> <em>SUPPORTED变量为真，则该特性必须由相应的CMAKE</em> <em>LINK_GROUP_USING</em> 变量定义。</p>
+<p>如果不支持特定于语言的特性，则CMAKE_LINK_GROUP_USING_&lt; feature &gt;<em>SUPPORTED变量必须为真，并且该特性必须由相应的CMAKE_LINK_GROUP_USING</em>&lt; feature &gt;变量定义。</p>
+<p>LINK_GROUP生成器表达式与LINK_LIBRARY生成器表达式兼容。可以使用LINK_LIBRARY生成器表达式指定组中涉及的库。</p>
+<p>链接步骤中涉及的每个目标或外部库都可以是多个组的一部分，但前提是所有涉及的组都指定了相同的特性。这样的组不会在链接器命令行上被合并，单独的组仍然会被保留。禁止为相同的目标或库混合不同的组特征。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(lib1 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib2 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib3 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib4 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib5 ...)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib3 PUBLIC  <span class="string">&quot;$&lt;LINK_GROUP:feature1,lib1,lib2&gt;&quot;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib4 PRIVATE <span class="string">&quot;$&lt;LINK_GROUP:feature1,lib1,lib3&gt;&quot;</span>)</span><br><span class="line"><span class="comment"># lib4 will be linked with the groups &#123;lib1,lib2&#125; and &#123;lib1,lib3&#125;.</span></span><br><span class="line"><span class="comment"># Both groups specify the same feature, so this is fine.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib5 PRIVATE <span class="string">&quot;$&lt;LINK_GROUP:feature2,lib1,lib3&gt;&quot;</span>)</span><br><span class="line"><span class="comment"># An error will be raised here because both lib1 and lib3 are part of two</span></span><br><span class="line"><span class="comment"># groups with different features.</span></span><br></pre></td></tr></table></figure>
+<p>当目标或外部库作为组的一部分参与链接步骤，同时又不属于任何组时，任何出现的非组链接项都将被它所属的组替换。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(lib1 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib2 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib3 ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib4 ...)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib3 PUBLIC lib1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib4 PRIVATE lib3 <span class="string">&quot;$&lt;LINK_GROUP:feature1,lib1,lib2&gt;&quot;</span>)</span><br><span class="line"><span class="comment"># lib4 will only be linked with lib3 and the group &#123;lib1,lib2&#125;</span></span><br></pre></td></tr></table></figure>
+<p>因为lib1是为lib4定义的组的一部分，所以这个组将应用回对lib3使用lib1。最终结果就像lib3的链接关系被指定为:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(lib3 PUBLIC <span class="string">&quot;$&lt;LINK_GROUP:feature1,lib1,lib2&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>注意，组相对于非组链接项的优先级可能导致组之间的循环依赖关系。如果发生这种情况，将引发致命错误，因为不允许组使用循环依赖项。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(lib1A ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib1B ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib2A ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib2B ...)</span><br><span class="line"><span class="keyword">add_library</span>(lib3 ...)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Non-group linking relationships, these are non-circular so far</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib1A PUBLIC lib2A)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib2B PUBLIC lib1B)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The addition of these groups creates circular dependencies</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib3 PRIVATE</span><br><span class="line">  <span class="string">&quot;$&lt;LINK_GROUP:feat,lib1A,lib1B&gt;&quot;</span></span><br><span class="line">  <span class="string">&quot;$&lt;LINK_GROUP:feat,lib2A,lib2B&gt;&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>由于为lib3定义了组，lib1A和lib2B的链接关系有效地扩展为等价的:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(lib1A PUBLIC <span class="string">&quot;$&lt;LINK_GROUP:feat,lib2A,lib2B&gt;&quot;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(lib2B PUBLIC <span class="string">&quot;$&lt;LINK_GROUP:feat,lib1A,lib1B&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>这在组之间创建了一个循环依赖:lib1A—&gt; lib2B—&gt; lib1A。</p>
+<p>还应注意以下限制:</p>
+<p>库列表可以指定CMake目标或库。任何OBJECT或INTERFACE类型的CMake目标都将忽略表达式的特征方面，而是以标准方式链接。</p>
+<p>$ &lt; LINK_GROUP:……&gt;生成器表达式只能用于指定链接库。实际上，这意味着它可以出现在LINK_LIBRARIES、INTERFACE_LINK_LIBRARIES和INTERFACE_LINK_LIBRARIES_DIRECT目标属性中，并在target_link_libraries()和LINK_LIBRARIES()命令中指定。</p>
+<p>如果&lt; LINK_GROUP:……&gt;生成器表达式出现在目标的INTERFACE_LINK_LIBRARIES属性中，它将包含在由安装(EXPORT)命令生成的导入目标中。使用此导入的环境负责定义此表达式使用的链接特性。</p>
+<h3 id="联系上下文"><a href="#联系上下文" class="headerlink" title="联系上下文"></a>联系上下文</h3><p>$&lt;LINK_ONLY:…&gt;<br>3.1新版功能。</p>
+<p>的内容……，但在收集传递使用需求时除外，在这种情况下，它是空字符串。这用于INTERFACE_LINK_LIBRARIES目标属性中，通常通过target_link_libraries()命令填充，以指定私有链接依赖关系，而不需要其他使用要求。</p>
+<p>3.24新版功能:LINK_ONLY也可以在LINK_LIBRARIES目标属性中使用。参见策略CMP0131。</p>
+<p>$&lt;DEVICE_LINK:list&gt;<br>3.18新版功能。</p>
+<p>如果是设备链接步骤，则返回列表，否则返回空列表。设备链接步骤由CUDA_SEPARABLE_COMPILATION和CUDA_RESOLVE_DEVICE_SYMBOLS属性和策略CMP0105控制。此表达式只能用于指定链接选项。</p>
+<p>$&lt;HOST_LINK:list&gt;<br>3.18新版功能。</p>
+<p>如果是普通的链接步骤，则返回列表，否则返回空列表。当还涉及到设备链接步骤时，此表达式主要有用(请参阅$ 生成器表达式)。此表达式只能用于指定链接选项。</p>
+<h3 id="依赖于目标的表达式"><a href="#依赖于目标的表达式" class="headerlink" title="依赖于目标的表达式"></a>依赖于目标的表达式</h3><p>这些查询引用目标tgt。除非另有说明，这可以是任何运行时工件，即:</p>
+<p>由add_executable()创建的可执行目标。</p>
+<p>共享库目标(。因此，.dll而不是他们的.lib导入库)由add_library()创建。</p>
+<p>由add_library()创建的静态库目标。</p>
+<p>在下文中，短语“tgt文件名”指的是tgt二进制文件的名称。这必须与短语“目标名称”区别开来，后者只是字符串tgt。</p>
+<p>$&lt;TARGET_EXISTS:tgt&gt;<br>3.12新版功能。</p>
+<p>如果tgt作为CMake目标存在，则为1，否则为0。</p>
+<p>$&lt;TARGET_NAME_IF_EXISTS:tgt&gt;<br>3.12新版功能。</p>
+<p>如果目标存在，则目标名tgt，否则为空字符串。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_NAME:…&gt;<br>标志着……作为目标的名字。如果将目标导出到多个依赖的导出集，这是必需的。…必须是目标的字面名称，它不能包含生成器表达式。</p>
+<p>$&lt;TARGET_PROPERTY:tgt,prop&gt;<br>目标tgt上的属性道具的值。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_PROPERTY:prop&gt;<br>属性prop在表达式被求值的目标上的值。注意，对于传递使用需求中的生成器表达式，这是消费目标，而不是指定需求的目标。</p>
+<p>$&lt;TARGET_OBJECTS:tgt&gt;<br>3.1新版功能。</p>
+<p>生成tgt产生的对象列表。这通常用于对象库目标。</p>
+<p>$&lt;TARGET_POLICY:policy&gt;<br>如果创建’head’目标时策略为NEW，则为1，否则为0。如果没有设置策略，则会发出策略的警告消息。此生成器表达式仅适用于策略的一个子集。</p>
+<p>$&lt;TARGET_FILE:tgt&gt;<br>tgt二进制文件的完整路径。</p>
+<p>请注意，tgt并不是作为计算该表达式的目标的依赖项添加的，除非该表达式在add_custom_command()或add_custom_target()中使用。</p>
+<p>$&lt;TARGET_FILE_BASE_NAME:tgt&gt;<br>3.15新版功能。</p>
+<p>tgt的基本名称，即$&lt;TARGET_FILE_NAME:tgt&gt; ，不带前缀和后缀。例如，如果tgt文件名是libbase。基名是base。</p>
+<p>另请参阅OUTPUT_NAME、ARCHIVE_OUTPUT_NAME、LIBRARY_OUTPUT_NAME和RUNTIME_OUTPUT_NAME目标属性及其特定于配置的变体OUTPUT_NAME_ 、ARCHIVE_OUTPUT_NAME_ 、LIBRARY_OUTPUT_NAME_ 和RUNTIME_OUTPUT_NAME_ 。</p>
+<p>也可以考虑 _POSTFIX和DEBUG_POSTFIX目标属性。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_FILE_PREFIX:tgt&gt;<br>3.15新版功能。</p>
+<p>tgt文件名的前缀(例如lib)。</p>
+<p>请参见PREFIX target属性。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_FILE_SUFFIX:tgt&gt;<br>3.15新版功能。</p>
+<p>tgt文件名的后缀(扩展名如.so或.exe)。</p>
+<p>请参见SUFFIX target属性。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_FILE_NAME:tgt&gt;<br>tgt文件名。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_FILE_DIR:tgt&gt;<br>tgt二进制文件的目录。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_LINKER_FILE:tgt&gt;<br>链接到tgt目标时使用的文件。这通常是tgt表示的库(。a， .lib， .so)，但对于DLL平台上的共享库，它将是与DLL关联的.lib导入库。</p>
+<p>$&lt;TARGET_LINKER_FILE_BASE_NAME:tgt&gt;<br>3.15新版功能。</p>
+<p>用于链接目标tgt的基本文件名，例如$ ，不带前缀和后缀。例如，目标文件名为libbase。一、基地名称为基地。</p>
+<p>另请参阅OUTPUT_NAME、ARCHIVE_OUTPUT_NAME和LIBRARY_OUTPUT_NAME目标属性及其特定于配置的变体OUTPUT_NAME_ 、ARCHIVE_OUTPUT_NAME_ 和LIBRARY_OUTPUT_NAME_ 。</p>
+<p>也可以考虑 _POSTFIX和DEBUG_POSTFIX目标属性。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_LINKER_FILE_PREFIX:tgt&gt;<br>3.15新版功能。</p>
+<p>用于链接目标tgt的文件前缀。</p>
+<p>另请参阅PREFIX和IMPORT_PREFIX目标属性。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_LINKER_FILE_SUFFIX:tgt&gt;<br>3.15新版功能。</p>
+<p>用于链接的文件后缀，其中tgt是目标的名称。</p>
+<p>后缀对应于文件扩展名(例如“。所以”或”.lib”)。</p>
+<p>另请参阅SUFFIX和IMPORT_SUFFIX目标属性。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_LINKER_FILE_NAME:tgt&gt;<br>用于链接目标tgt的文件名。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_LINKER_FILE_DIR:tgt&gt;<br>用于链接目标tgt的文件目录。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_SONAME_FILE:tgt&gt;<br>带有soname (.so.3)的文件，其中tgt是目标的名称。</p>
+<p>$&lt;TARGET_SONAME_FILE_NAME:tgt&gt;<br>带有soname (.so.3)的文件名。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_SONAME_FILE_DIR:tgt&gt;<br>使用soname (.so.3)的目录。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_PDB_FILE:tgt&gt;<br>3.1新版功能。</p>
+<p>链接器生成的程序数据库文件(.pdb)的完整路径，其中tgt是目标的名称。</p>
+<p>另请参阅PDB_NAME和PDB_OUTPUT_DIRECTORY目标属性及其特定于配置的变体PDB_NAME 和PDB_OUTPUT_DIRECTORY_ 。</p>
+<p>$&lt;TARGET_PDB_FILE_BASE_NAME:tgt&gt;<br>3.15新版功能。</p>
+<p>链接器生成的程序数据库文件(.pdb)的基本名称，其中tgt是目标的名称。</p>
+<p>基本名称对应于不带前缀和后缀的目标PDB文件名(参见$ )。例如，如果目标文件名是base。Pdb，基名为base。</p>
+<p>另请参阅PDB_NAME目标属性及其特定于配置的变体PDB_NAME 。</p>
+<p>也可以考虑 _POSTFIX和DEBUG_POSTFIX目标属性。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加。</p>
+<p>$&lt;TARGET_PDB_FILE_NAME:tgt&gt;<br>3.1新版功能。</p>
+<p>链接器生成的程序数据库文件(.pdb)的名称。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_PDB_FILE_DIR:tgt&gt;<br>3.1新版功能。</p>
+<p>链接器生成的程序数据库文件(.pdb)的目录。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_BUNDLE_DIR:tgt&gt;<br>3.9新版功能。</p>
+<p>bundle目录的完整路径(&#x2F;path&#x2F;to&#x2F;my.)App， &#x2F;path&#x2F;to&#x2F;my.framework，或&#x2F;path&#x2F;to&#x2F;my.bundle)，其中TGT是目标的名称。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_BUNDLE_DIR_NAME:tgt&gt;<br>3.24新版功能。</p>
+<p>包目录的名称(my。App、my.framework或my.bundle)，其中TGT是目标的名称。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_BUNDLE_CONTENT_DIR:tgt&gt;<br>3.9新版功能。</p>
+<p>包内容目录的完整路径，其中tgt是目标的名称。对于macOS SDK，它指向&#x2F;path&#x2F;to&#x2F;my。app&#x2F;Contents， &#x2F;path&#x2F;to&#x2F;my.framework，或&#x2F;path&#x2F;to&#x2F;my.bundle&#x2F;Contents。对于所有其他sdk(例如iOS)，它指向&#x2F;path&#x2F;to&#x2F;my。App， &#x2F;path&#x2F;to&#x2F;my.framework，或&#x2F;path&#x2F;to&#x2F;my.framework。由于扁平的束结构。</p>
+<p>请注意，tgt并没有作为计算该表达式的目标的依赖项添加(请参阅策略CMP0112)。</p>
+<p>$&lt;TARGET_RUNTIME_DLLS:tgt&gt;<br>3.21新版功能。</p>
+<p>目标在运行时依赖的dll列表。这是由目标的传递依赖项中所有SHARED目标的位置决定的。在可执行文件、SHARED库和MODULE库以外的目标上使用此生成器表达式是错误的。在非dll平台上，这个表达式总是求值为空字符串。</p>
+<p>此生成器表达式可用于将目标所依赖的所有dll复制到POST_BUILD自定义命令的输出目录中。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(foo CONFIG REQUIRED) <span class="comment"># package generated by install(EXPORT)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(exe main.c)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(exe PRIVATE foo::foo foo::bar)</span><br><span class="line"><span class="keyword">add_custom_command</span>(<span class="keyword">TARGET</span> exe POST_BUILD</span><br><span class="line">  <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_COMMAND&#125;</span> -E copy $&lt;TARGET_RUNTIME_DLLS:exe&gt; $&lt;TARGET_FILE_DIR:exe&gt;</span><br><span class="line">  COMMAND_EXPAND_LISTS</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>请注意 导入的目标只有在知道其.dll文件的位置时才会被支持。导入的SHARED库必须将IMPORTED_LOCATION设置为其.dll文件。有关详细信息，请参阅add_library导入的库部分。许多查找模块生成UNKNOWN类型的导入目标，因此将被忽略。</p>
+<h3 id="导出和安装表达式"><a href="#导出和安装表达式" class="headerlink" title="导出和安装表达式"></a>导出和安装表达式</h3><p>$&lt;INSTALL_INTERFACE:…&gt;<br>的内容……当使用install(EXPORT)导出属性时，否则为空。</p>
+<p>$&lt;BUILD_INTERFACE:…&gt;<br>的内容……当使用export()导出属性时，或者当目标被同一构建系统中的另一个目标使用时。否则展开为空字符串。</p>
+<p>$<INSTALL_PREFIX><br>当通过install(EXPORT)导出目标时，或在INSTALL_NAME_DIR属性或install(RUNTIME_DEPENDENCY_SET)的INSTALL_NAME_DIR参数中求值时，安装前缀的内容，否则为空。</p>
+<h3 id="多层次表达评价"><a href="#多层次表达评价" class="headerlink" title="多层次表达评价"></a>多层次表达评价</h3><p>$&lt;GENEX_EVAL:expr&gt;<br>3.12新版功能。</p>
+<p>在当前上下文中作为生成器表达式计算的expr的内容。这允许使用生成器表达式，其计算结果本身就是生成器表达式。</p>
+<p>$&lt;TARGET_GENEX_EVAL:tgt,expr&gt;<br>3.12新版功能。</p>
+<p>expr的内容在tgt目标的上下文中作为生成器表达式计算。这允许使用本身包含生成器表达式的自定义目标属性。</p>
+<p>当您希望管理支持生成器表达式的自定义属性时，具有计算生成器表达式的功能非常有用。例如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(foo ...)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set_property</span>(<span class="keyword">TARGET</span> foo PROPERTY</span><br><span class="line">  CUSTOM_KEYS $&lt;$&lt;CONFIG:DEBUG&gt;:FOO_EXTRA_THINGS&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_custom_target</span>(printFooKeys</span><br><span class="line">  <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_COMMAND&#125;</span> -E echo $&lt;TARGET_PROPERTY:foo,CUSTOM_KEYS&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>printFooKeys自定义命令的简单实现是错误的，因为CUSTOM_KEYS目标属性没有被计算，并且内容按原样传递(即$&lt;$ :FOO_EXTRA_THINGS&gt;)。</p>
+<p>为了得到预期的结果(例如，如果config是Debug，则FOO_EXTRA_THINGS)，需要计算$ 的输出:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_custom_target</span>(printFooKeys</span><br><span class="line">  <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_COMMAND&#125;</span> -E</span><br><span class="line">    echo $&lt;TARGET_GENEX_EVAL:foo,$&lt;TARGET_PROPERTY:foo,CUSTOM_KEYS&gt;&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="escaped-characaters"><a href="#escaped-characaters" class="headerlink" title="escaped characaters"></a>escaped characaters</h3><p>这些表达式求值为特定的字符串字面量。使用它们来代替实际的字符串字面量，以防止它们具有特殊的含义。</p>
+<p>$&lt;ANGLE-R&gt;<br>一个字面的&gt;。例如，用于比较包含&gt;的字符串。</p>
+<p>$&lt;COMMA&gt;<br>字面上的，。例如，用于比较包含，的字符串。</p>
+<p>$&lt;SEMICOLON&gt;<br>字面上的;用于防止对参数进行列表扩展。</p>
+<h3 id="弃用表达式"><a href="#弃用表达式" class="headerlink" title="弃用表达式"></a>弃用表达式</h3><p>$&lt;CONFIGURATION&gt;<br>配置名称。CMake 3.0后已弃用。使用CONFIG代替。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Zoin</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zoili.github.io/2023/01/05/cmakedesc3/">https://zoili.github.io/2023/01/05/cmakedesc3/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Zoin</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/cmake/">
+                                    <span class="chip bg-color">cmake</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/01/06/powerdesign/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="PowerDesigner安装+破解+汉化">
+                        
+                        <span class="card-title">PowerDesigner安装+破解+汉化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="post-category">
+                                    软件安装
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/software/">
+                        <span class="chip bg-color">software</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/01/04/cmakedesc2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征">
+                        
+                        <span class="card-title">cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="post-category">
+                                    编译安装
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/cmake/">
+                        <span class="chip bg-color">cmake</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2024</span>
+            
+            <a href="/about" target="_blank">Zoin</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zoili" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:370544667@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=370544667" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 370544667" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4ef4a199a1e4a8e0a46dd4209fee29b3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

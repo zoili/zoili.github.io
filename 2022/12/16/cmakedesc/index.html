@@ -1,0 +1,1207 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="cmake基本使用（命令行）, Zoin&#39;s Space">
+    <meta name="description" content="cmake基本使用（命令行）参考：官方文档和官方教程：https://cmake.org/cmake/help/latest/index.htmlhttps://cmake.org/cmake/help/latest/guide/tutor">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>cmake基本使用（命令行） | Zoin&#39;s Space</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zoin&#39;s Space</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zoin&#39;s Space</div>
+        <div class="logo-desc">
+            
+            c++ cmake openssl github https 数字证书 移动语义
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">cmake基本使用（命令行）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/cmake/">
+                                <span class="chip bg-color">cmake</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="post-category">
+                                编译安装
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-12-16
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="cmake基本使用（命令行）"><a href="#cmake基本使用（命令行）" class="headerlink" title="cmake基本使用（命令行）"></a>cmake基本使用（命令行）</h1><p>参考：<br>官方文档和官方教程：<br><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/index.html">https://cmake.org/cmake/help/latest/index.html</a><br><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></p>
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>1.先自己跟着教程走一遍，有个大概了解  </p>
+<p><img src="/images/cmakedesccomm1.jpg"></p>
+<p>2.命令行–这里只讲解cmake命令，ctest和cpack都比较简单，自己去官网上看看就好<br><img src="/images/cmakedesccomm2.jpg"></p>
+<p>3.其他，比如构建系统、cmake里面的命令、cmake内部属性变量、cmake生成器表达式、cmake语法等等<br>只讲如下标红框的内容</p>
+<p><img src="/images/cmakedesccomm3.jpg"></p>
+<h2 id="cmake命令行"><a href="#cmake命令行" class="headerlink" title="cmake命令行"></a>cmake命令行</h2><h3 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h3><h4 id="生成一个项目构建系统"><a href="#生成一个项目构建系统" class="headerlink" title="生成一个项目构建系统"></a>生成一个项目构建系统</h4><p><strong>cmake [&lt;options&gt;] &lt;path-to-source&gt;</strong> </p>
+<p>使用当前工作目录作为构建目录，使用path-to-source作为源代码目录。指定的路径可以是相对于当前工作目录的绝对路径或相对路径。源树必须包含一个CMakeLists.txt文件，不能包含一个CMakeCache.txt文件，因为后者标识了一个现有的构建目录  。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir build ; cd build  </span><br><span class="line">cmake ../src</span><br></pre></td></tr></table></figure>
+
+<p><strong>cmake [&lt;options&gt;] &lt;path-to-existing-build&gt;</strong></p>
+<p>使用ath-to-existing-build作为构建目录，并从它的CMakeCache.txt文件中加载到源代码目录的路径，该文件必须已经由以前的CMake运行生成。指定的路径可以是相对于当前工作目录的绝对路径或相对路径  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd build  </span><br><span class="line">cmake .</span><br></pre></td></tr></table></figure>
+
+<p><strong>cmake [&lt;options&gt;] -S &lt;path-to-source&gt; -B &lt;path-to-build&gt;</strong></p>
+<p>使用 ath-to-build作为构建目录，使用 path-to-source作为源代码目录。指定的路径可以是相对于当前工作目录的绝对路径或相对路径。源树必须包含CMakeLists.txt文件。如果构建树不存在，将自动创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake -S src -B build</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/cmakedesc1.jpg"></p>
+<p>在生成一个构建系统之后，可以使用相应的本地构建工具来构建项目。例如，在使用Unix Makefiles生成器后，可以直接运行make</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p><strong>Options</strong></p>
+<p>讲几个重要的，其他的可以看官网文档</p>
+<p><strong>-S &lt;path-to-source&gt;</strong><br>要构建的CMake项目的根目录的路径</p>
+<p><strong>-B &lt;path-to-build&gt;</strong><br>到CMake将用作构建目录根的目录的路径。<br>如果目录不存在，CMake将创建它。</p>
+<p><strong>-C &lt;initial-cache&gt;</strong><br>预加载脚本以填充缓存。</p>
+<p>当CMake第一次在一个空的构建树中运行时，它会创建一个CMakeCache.txt文件，并为项目填充可定制的设置。此选项可用于指定在第一次通过项目的CMake列表文件之前从其中加载缓存项的文件。加载的条目优先于项目的默认值。给定的文件应该是一个CMake脚本，其中包含使用CACHE选项的set()命令，而不是缓存格式的文件。</p>
+<p>脚本中对CMAKE_SOURCE_DIR和CMAKE_BINARY_DIR的引用计算为顶级源代码和构建目录</p>
+<p><strong>-D &lt;var&gt;:&lt;type&gt;&#x3D;&lt;value&gt;, -D &lt;var&gt;&#x3D;&lt;value&gt;</strong><br>创建或更新CMake CACHE条目。</p>
+<p>当CMake第一次在一个空的构建树中运行时，它会创建一个CMakeCache.txt文件，并为项目填充可定制的设置。此选项可用于指定优先于项目默认值的设置。可以根据需要对任意数量的缓存项重复该选项。</p>
+<p>如果给出了:type 部分，则它必须是set()命令文档为其CACHE签名指定的类型之一。如果:type 部分被省略，则如果条目不存在类型，则该条目将创建为没有类型的条目。如果项目中的命令将类型设置为PATH或FILEPATH，则 <value> 将被转换为绝对路径。</p>
+<p>该选项也可以作为单个参数给出:-D&lt;var&gt;:&lt;type&gt;&#x3D;&lt;value&gt; or -D&lt;var&gt;&#x3D;&lt;value&gt;.</p>
+<p>需要注意的是，-C和-D参数的顺序非常重要。它们将按照列出的顺序执行，最后一个参数优先于前面的参数。例如，如果你指定-DCMAKE_BUILD_TYPE&#x3D;Debug，后面跟着一个-C参数，文件调用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(CMAKE_BUILD_TYPE &quot;Release&quot; CACHE STRING &quot;&quot; FORCE)</span><br></pre></td></tr></table></figure>
+
+<p>那么-C参数将优先，CMAKE_BUILD_TYPE将被设置为Release。但是，如果-D参数出现在-C参数之后，它将被设置为Debug。</p>
+<p>如果set(… CACHE …)调用在-C文件中不使用FORCE，并且-D参数设置了相同的变量，-D参数将优先考虑顺序</p>
+<p><strong>-U &lt;globbing_expr&gt;</strong><br>从CMake CACHE中删除匹配的条目。</p>
+<p>此选项可用于从CMakeCache.txt文件中删除一个或多个变量，使用*和?都受支持。可以根据需要对任意数量的缓存项重复该选项。</p>
+<p>小心使用，你可以让你的CMakeCache.txt无法工作</p>
+<p><strong>-G &lt;generator-name&gt;</strong></p>
+<p>指定生成系统生成器。</p>
+<p>CMake可能在某些平台上支持多个本地构建系统。生成器负责生成特定的构建系统。可能的生成器名称在cmake generators(7)<a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7)">https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7)</a>手册中指定。</p>
+<p>如果没有指定，CMake检查CMAKE_GENERATOR环境变量，否则退回到内置的默认选择</p>
+<blockquote>
+<p>大概有如下generator-name：<br>Borland Makefiles<br>MSYS Makefiles<br>MinGW Makefiles<br>NMake Makefiles<br>NMake Makefiles JOM<br>Unix Makefiles<br>Watcom WMake<br>Visual Studio 15 2017<br>Visual Studio 16 2019<br>Visual Studio 17 2022<br>…</p>
+</blockquote>
+<p><strong>-T &lt;toolset-spec&gt;</strong><br>生成器的工具集规范(如果支持的话)。</p>
+<p>一些CMake生成器支持工具集规范，以告诉本机构建系统如何选择编译器。详细信息请参阅CMAKE_GENERATOR_TOOLSET变量。</p>
+<p><strong>-L[A][H]</strong><br>列出非高级缓存变量。</p>
+<p>列表缓存变量将运行CMake，并从CMake缓存中列出所有未标记为INTERNAL或ADVANCED的变量。这将有效地显示当前的CMake设置，然后可以用-D选项进行更改。改变一些变量可能会导致创建更多的变量。如果指定了A，那么它也会显示高级变量。如果指定了H，它还将显示每个变量的帮助</p>
+<p><strong>–log-level&#x3D;&lt;level&gt;</strong><br>设置日志 &lt;级别&gt; 。<br>message()命令将只输出指定日志级别或更高级别的消息。有效的日志级别为ERROR、WARNING、NOTICE、STATUS(默认)、VERBOSE、DEBUG和TRACE。</p>
+<p>要使CMake运行之间的日志级别保持不变，请将CMAKE_MESSAGE_LOG_LEVEL设置为缓存变量。如果同时给出了命令行选项和变量，则命令行选项优先。</p>
+<p>出于向后兼容性的考虑，——loglevel也可以作为该选项的同义词。</p>
+<p><strong>–log-context</strong><br>启用message()命令输出附加到每个消息的上下文。</p>
+<p>此选项只显示当前CMake运行的上下文。要使在所有后续CMake运行中显示上下文持久，请将CMAKE_MESSAGE_CONTEXT_SHOW设置为缓存变量。当给出这个命令行选项时，CMAKE_MESSAGE_CONTEXT_SHOW将被忽略。</p>
+<p><strong>–debug-find</strong><br>将cmake find命令置于调试模式。</p>
+<p>在cmake运行过程中打印额外的find调用信息到标准错误。输出是为人类使用而设计的，而不是用于解析。另请参阅CMAKE_FIND_DEBUG_MODE变量，以调试项目更本地的部分</p>
+<p><strong>–debug-find-pkg&#x3D;&lt;pkg&gt;[,…]</strong><br>在调用find_package( )时，将cmake find命令置于调试模式，其中 是给定的以逗号分隔的区分大小写的包名列表中的一个条目。</p>
+<p>类似于——debug-find，但将作用域限制为指定的包</p>
+<p><strong>–debug-find-var&#x3D;&lt;var&gt;[,…]</strong><br>当使用作为结果变量调用时，将cmake find命令置于调试模式，其中是给定逗号分隔列表中的一个条目。</p>
+<p>类似于——debug-find，但将作用域限制为指定的变量名。</p>
+<p><strong>–preset &lt;preset&gt;, –preset&#x3D;&lt;preset&gt;</strong><br>从 &#x2F;CMakePresets中读取预设值。和 &#x2F;CMakeUserPresets.json。预设可以指定生成器和构建目录，以及传递给CMake的变量和其他参数列表。当前工作目录必须包含CMake预设文件。CMake GUI也可以识别CMakePresets。json和CMakeUserPresets。json文件。有关这些文件的详细信息，请参见cmake-presets(7)。</p>
+<p>在所有其他命令行选项之前读取预设。预置所指定的选项(变量、生成器等)都可以通过在命令行上手动指定来覆盖。例如，如果预设将一个名为MYVAR的变量设置为1，但用户使用-D参数将其设置为2，则首选值为2。</p>
+<p><strong>–list-presets[&#x3D;&lt;type&gt;]</strong><br>列出指定type的可用预设。 type的有效值为configure、build、test、package或all。如果省略 ，则假设为configure。当前工作目录必须包含CMake预设文件。</p>
+<h4 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h4><p><strong>cmake –build &lt;dir&gt;             [&lt;options&gt;] [– &lt;build-tool-options&gt;]<br>cmake –build –preset &lt;preset&gt; [&lt;options&gt;] [– &lt;build-tool-options&gt;]</strong>  </p>
+<p><strong>–build &lt;dir&gt;</strong><br>要构建的项目二进制目录。这是必需的(除非指定了预设)，并且必须是第一个</p>
+<p><strong>–preset &lt;preset&gt;, –preset&#x3D;&lt;preset&gt;</strong><br>使用生成预设来指定生成选项。项目二进制目录是从configurePreset键推断出来的。当前工作目录必须包含CMake预设文件。详细信息请参见预置。</p>
+<p><strong>–list-presets</strong><br>列出可用的生成预设。当前工作目录必须包含CMake预设文件</p>
+<p><strong>-j [&lt;jobs&gt;], –parallel [&lt;jobs&gt;]</strong><br>构建时使用的最大并发进程数。如果省略 ，则使用本机构建工具的默认编号。</p>
+<p>如果设置了CMAKE_BUILD_PARALLEL_LEVEL环境变量，则在没有给出此选项时指定默认并行级别。</p>
+<p>一些本地构建工具总是并行构建。 值为1的使用可用于限制单个作业。</p>
+<p><strong>-t &lt;tgt&gt;…, –target &lt;tgt&gt;…</strong><br>Build 而不是默认目标。可以给出多个目标，用空格分隔</p>
+<p><strong>–config &lt;cfg&gt;</strong><br>对于多配置工具，请选择configuration</p>
+<p><strong>–clean-first</strong><br>首先构建目标清洁，然后构建 (To clean only, use –target clean.)</p>
+<p><strong>-v, –verbose</strong><br>启用详细输出(如果支持)，包括要执行的构建命令。</p>
+<p>如果设置了VERBOSE环境变量或CMAKE_VERBOSE_MAKEFILE缓存变量，则可以省略此选项</p>
+<p><strong>–</strong><br>将剩余选项传递给本地编译工具</p>
+<h4 id="安装项目"><a href="#安装项目" class="headerlink" title="安装项目"></a>安装项目</h4><p><strong>cmake –install &lt;dir&gt; [&lt;options&gt;]</strong>  </p>
+<p><strong>–install &lt;dir&gt;</strong><br>要安装的项目二进制目录。这是必需的，必须放在第一位</p>
+<p><strong>–config &lt;cfg&gt;</strong><br>对于多配置生成器，选择configuration </p>
+<p><strong>–component &lt;comp&gt;</strong><br>基于组件的安装。只安装组件 </p>
+<p><strong>–default-directory-permissions &lt;permissions&gt;</strong><br>默认目录安装权限。权限格式 &lt;u&#x3D;rwx,g&#x3D;rx,o&#x3D;rx&gt;</p>
+<p><strong>–prefix &lt;prefix&gt;</strong><br>重写安装前缀CMAKE_INSTALL_PREFIX</p>
+<p><strong>–strip</strong><br>安装前先剥离</p>
+<p><strong>-v, –verbose</strong><br>启用详细输出。</p>
+<p>如果设置了VERBOSE环境变量，则可以省略此选项</p>
+<p><strong>Run cmake –install with no options for quick help.</strong></p>
+<h4 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h4><p><strong>cmake [-D &lt;var&gt;&#x3D;&lt;value&gt;]… -P &lt;cmake-script-file&gt; [– &lt;unparsed-options&gt;…]</strong>  </p>
+<p><strong>-D &lt;var&gt;&#x3D;&lt;value&gt;</strong><br>定义脚本模式的变量。</p>
+<p><strong>-P &lt;cmake-script-file&gt;</strong><br>将给定的cmake文件作为用cmake语言编写的脚本处理。不执行配置或生成步骤，也不修改缓存。如果使用-D定义变量，则必须在-P参数之前执行此操作</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Zoin</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zoili.github.io/2022/12/16/cmakedesc/">https://zoili.github.io/2022/12/16/cmakedesc/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Zoin</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/cmake/">
+                                    <span class="chip bg-color">cmake</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/01/04/cmakedesc2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征">
+                        
+                        <span class="card-title">cmake文件里面的命令、环境变量、属性、变量、生成器以及编译功能特征</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="post-category">
+                                    编译安装
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/cmake/">
+                        <span class="chip bg-color">cmake</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/12/16/cmakedesc1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="cmake基本使用（构建系统）">
+                        
+                        <span class="card-title">cmake基本使用（构建系统）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="post-category">
+                                    编译安装
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/cmake/">
+                        <span class="chip bg-color">cmake</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2024</span>
+            
+            <a href="/about" target="_blank">Zoin</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zoili" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:370544667@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=370544667" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 370544667" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4ef4a199a1e4a8e0a46dd4209fee29b3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
